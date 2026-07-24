@@ -1,6 +1,5 @@
 // ============================================================
-// CF-Edge Relay — Refactored v3.0.0
-// Based on: CFnew Terminal v2.9.8c
+// miladj
 // All identifiers translated to English. Core logic unchanged.
 // ============================================================
 
