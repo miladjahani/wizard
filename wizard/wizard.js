@@ -266,18 +266,18 @@ function doVerify(){
     if (!res.result || res.result.status !== 'active') throw new Error(T('err_token_invalid'));
     d1();
     var d2 = timed('l_accounts');
-    return api('GET', '/accounts?per_page=50');
-  }).then(function(res){
-    d2();
-    S.accounts = (res.result || []);
-    if (!S.accounts.length) throw new Error(T('err_no_accounts'));
-    fillAccounts();
-    if (S.accounts.length === 1) { S.accountId = S.accounts[0].id; S.accountName = S.accounts[0].name; }
-    setSig('online', T('sig_online'));
-    api('GET', '/user/tokens/permission_groups').then(function(r){ hydrateScopeIds(r.result); }).catch(function(){});
-    if ($('#remember').checked) localStorage.setItem('ef_token', S.token); else localStorage.removeItem('ef_token');
-    saveCfg();
-    setTimeout(function(){ gotoStep(2); }, 350);
+    return api('GET', '/accounts?per_page=50').then(function(res){
+      d2();
+      S.accounts = (res.result || []);
+      if (!S.accounts.length) throw new Error(T('err_no_accounts'));
+      fillAccounts();
+      if (S.accounts.length === 1) { S.accountId = S.accounts[0].id; S.accountName = S.accounts[0].name; }
+      setSig('online', T('sig_online'));
+      api('GET', '/user/tokens/permission_groups').then(function(r){ hydrateScopeIds(r.result); }).catch(function(){});
+      if ($('#remember').checked) localStorage.setItem('ef_token', S.token); else localStorage.removeItem('ef_token');
+      saveCfg();
+      setTimeout(function(){ gotoStep(2); }, 350);
+    });
   }).catch(function(e){
     removeCaret(); log('✗ ' + e.message, 'err');
     setSig('error', T('sig_error')); $('#token').classList.add('bad'); showErr('tokenErr', e.message);
