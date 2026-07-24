@@ -369,14 +369,33 @@ function deployWorkers(code, kvId, name, acc){
   var d = timed('l_upload');
   return api('PUT', '/accounts/'+acc+'/workers/scripts/'+name, buildFormData(code, kvId)).then(function(){ d(); })
   .then(function(){
+    // 1) روشن‌کردن زیردامنهٔ کلی workers.dev برای کل حساب (اگر قبلاً نبوده)
     var d2 = timed('l_devroute');
-    return api('PUT', '/accounts/'+acc+'/workers/scripts/'+name+'/settings', { workers_dev:true })
+    return api('PUT', '/accounts/'+acc+'/workers/subdomain', { enabled:true })
       .then(function(){ d2(); })
-      .catch(function(){ return api('PUT', '/accounts/'+acc+'/workers/scripts/'+name+'/subdomain', { enabled:true }).then(function(){d2();}).catch(function(){ removeCaret(); log('⚠ workers.dev route: enable manually if needed', 'warn'); }); });
+      .catch(function(e){ d2(); removeCaret(); log('⚠ global workers.dev: '+(e&&e.message||e)+' (ادامه می‌دهیم)', 'warn'); });
   })
   .then(function(){
-    var d3 = timed('l_subdomain');
-    return api('GET', '/accounts/'+acc+'/workers/subdomain').then(function(r){ d3(); var sub=r.result&&r.result.subdomain; return sub ? ('https://'+name+'.'+sub+'.workers.dev') : ('https://'+name+'.workers.dev'); });
+    // 2) روشن‌کردن route workers.dev برای همین script — هر دو endpoint، مستقل از هم
+    log('› enabling workers.dev route for this script…', 'step');
+    var perScript = api('PUT', '/accounts/'+acc+'/workers/scripts/'+name+'/subdomain', { enabled:true })
+      .catch(function(){ return api('POST', '/accounts/'+acc+'/workers/scripts/'+name+'/subdomain', { enabled:true }).catch(function(){ return null; }); });
+    var viaSettings = api('PUT', '/accounts/'+acc+'/workers/scripts/'+name+'/settings', { workers_dev:true, preview_version_id:null }).catch(function(){ return null; });
+    return Promise.all([perScript, viaSettings]).then(function(res){
+      if (!res[0] && !res[1]) {
+        log('⚠ route خودکار فعال نشد — در داشبورد: Workers → '+name+' → Settings → Triggers → workers.dev را دستی روشن کن', 'warn');
+      } else {
+        log('✓ workers.dev route enabled', 'ok');
+      }
+    });
+  })
+  .then(function(){
+    var d4 = timed('l_subdomain');
+    return api('GET', '/accounts/'+acc+'/workers/subdomain').then(function(r){
+      d4();
+      var sub = r.result && r.result.subdomain;
+      return sub ? ('https://'+name+'.'+sub+'.workers.dev') : ('https://'+name+'.workers.dev');
+    });
   });
 }
 
