@@ -6,6 +6,10 @@
 
 import { connect } from 'cloudflare:sockets';
 
+function getConfigTextValue(key, defaultValue = '', fallback = undefined) {
+  return getConfigText(key, defaultValue, fallback);
+}
+
 const base64TextDecoder = new TextDecoder();
 
 function decodeBase64(text) {
