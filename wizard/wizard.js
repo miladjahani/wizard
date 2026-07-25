@@ -1,5 +1,5 @@
 /* ============================================================
-   EDGE·FORGE — Deploy Wizard  (static, runs on Cloudflare Pages)
+   miliconfig — Deploy Wizard  (static, runs on Cloudflare Pages)
    Deploys the refactored edge-relay worker via api.cloudflare.com
    NOTE: api() goes through /__cf same-origin proxy (_worker.js)
    ============================================================ */
@@ -47,7 +47,7 @@ en: {
  res_title:'Live on the edge 🎉', res_lede:'Your relay is deployed. The panel is protected by your UUID / path.',
  res_base:'worker base url', res_panel:'private panel link', copy:'copy', open_panel:'open panel',
  res_note:'Keep the panel link private — anyone with it can manage the worker. Revoke by changing variable u.',
- foot_note:'EDGE·FORGE runs entirely in your browser. Token is sent only to api.cloudflare.com. Source on',
+ foot_note:'miliconfig runs entirely in your browser. Token is sent only to api.cloudflare.com. Source on',
  err_token_empty:'paste a token first', err_token_invalid:'token rejected by Cloudflare', err_no_accounts:'no accounts visible — check token account scope',
  err_name_invalid:'name must be 1–63 chars: a–z, 0–9, hyphen (not at edges)', err_path_invalid:'path may contain only a–z A–Z 0–9 _ -', err_domain_needs_zone:'pick a zone for the custom domain',
  misc_copied:'copied to clipboard', misc_stored:'stored token loaded — verify to continue',
@@ -61,9 +61,9 @@ en: {
  qs_step2_t:'Create CF account', qs_step2_d:'Sign up on Cloudflare using that temp email and verify it.', qs_step2_btn:'Sign up',
  qs_step3_t:'Create token', qs_step3_d:'Permissions are pre-loaded — open guided builder.', qs_step3_btn:'Build token',
  modal_ey:'guided · cloudflare token', modal_title:'Build your API token',
- modal_lede:'Open the Cloudflare page, then add the rows below. Names are in English because Cloudflare\'s UI is English — copy & paste each into the search box of the middle dropdown.',
- modal_open:'1) Open Cloudflare token page',
- modal_steps:'On that page: <span>Create Token</span> → next to “Custom token” click <span>Get started</span> → add one row per item below with <span>Add more</span> → then <span>Continue to summary</span> → <span>Create Token</span> → copy the token and paste it above.',
+ modal_lede:'Click the button below to open Cloudflare with pre-loaded permissions. Then follow the steps: click Create Token, then Continue to summary, and finally copy your token.',
+ modal_open:'Open Cloudflare Token Page',
+modal_steps:'On that page: <span>Create Token</span> → next to "Custom token" click <span>Get started</span> → permissions are already selected → click <span>Continue to summary</span> → <span>Create Token</span> → copy the token and paste it above.',
  modal_progress:'copied', modal_alldone:'All set! Now hit “Continue to summary” → “Create Token”.',
  modal_note:'After your first successful Verify, the wizard memorizes each permission\'s ID — next time this button pre-fills the form automatically.',
  modal_copyall:'Copy all names', modal_close:'Close', modal_copied:'Name copied — paste it in Cloudflare'
@@ -102,7 +102,7 @@ fa: {
  res_title:'روی لبه زنده شد 🎉', res_lede:'رلهٔ تو مستقر شد. پنل با UUID / مسیر تو محافظت می‌شود.',
  res_base:'آدرس پایهٔ ورکر', res_panel:'لینک خصوصی پنل', copy:'کپی', open_panel:'باز کردن پنل',
  res_note:'لینک پنل را خصوصی نگه دار — هر کس آن را داشته باشد می‌تواند ورکر را مدیریت کند. با تغییر متغیر u ابطال کن.',
- foot_note:'EDGE·FORGE کاملاً در مرورگر تو اجرا می‌شود. توکن فقط به api.cloudflare.com فرستاده می‌شود. منبع روی',
+ foot_note:'miliconfig کاملاً در مرورگر تو اجرا می‌شود. توکن فقط به api.cloudflare.com فرستاده می‌شود. منبع روی',
  err_token_empty:'اول یک توکن بچسبان', err_token_invalid:'توکن توسط کلودفلر رد شد', err_no_accounts:'هیچ حسابی دیده نمی‌شود — محدودهٔ حساب توکن را بررسی کن',
  err_name_invalid:'نام باید ۱–۶۳ کاراکتر باشد: a–z، 0–9، خط‌تیره (نه در ابتدا/انتها)', err_path_invalid:'مسیر فقط مجاز به a–z A–Z 0–9 _ -', err_domain_needs_zone:'برای دامنهٔ سفارشی یک zone انتخاب کن',
  misc_copied:'در کلیپ‌بورد کپی شد', misc_stored:'توکن ذخیره‌شده بارگذاری شد — برای ادامه بررسی کن',
@@ -117,7 +117,7 @@ fa: {
  qs_step3_t:'ساخت توکن', qs_step3_d:'دسترسی‌ها از قبل آماده‌اند — سازندهٔ راهنما را باز کن.', qs_step3_btn:'ساخت توکن',
  modal_ey:'راهنما · توکن کلودفلر', modal_title:'توکن API خود را بساز',
  modal_lede:'صفحهٔ کلودفلر را باز کن، بعد ردیف‌های زیر را اضافه کن. نام‌ها انگلیسی‌اند چون رابط کلودفر انگلیسی است — هر کدام را در کادر جستجوی dropdown وسط پیست کن.',
- modal_open:'۱) باز کردن صفحهٔ توکن کلودفر',
+ modal_open:'باز کردن صفحهٔ توکن کلودفر',
  modal_steps:'در آن صفحه: <span>Create Token</span> → جلوی “Custom token” روی <span>Get started</span> بزن → برای هر مورد زیر با <span>Add more</span> یک ردیف بساز → بعد <span>Continue to summary</span> → <span>Create Token</span> → توکن را کپی کن و بالا بچسبان.',
  modal_progress:'کپی‌شده', modal_alldone:'همه آماده‌اند! حالا “Continue to summary” → “Create Token” را بزن.',
  modal_note:'بعد از اولین تأیید (Verify) موفق، ویزارد شناسهٔ هر دسترسی را به‌خاطر می‌سپارد — دفعهٔ بعد این دکمه فرم را خودکار می‌چیند.',
@@ -514,7 +514,7 @@ if (document.readyState === 'loading') document.addEventListener('DOMContentLoad
 /* ============================================================
    Quick-start rail + guided token modal + self-learning prefill
    ============================================================ */
-var QS_LINKS = { email:'https://temp-mail.org/', signup:'https://dash.cloudflare.com/sign-up' };
+var QS_LINKS = { email:'https://tempmail.ing/', signup:'https://dash.cloudflare.com/sign-up' };
 var CF_TOKENS_PAGE = 'https://dash.cloudflare.com/profile/api-tokens';
 
 function norm(s){ return String(s == null ? '' : s).toLowerCase().replace(/[^a-z0-9]/g, ''); }
@@ -579,7 +579,15 @@ function markCopied(btn){
   toast(T('modal_copied'));
 }
 function copyAllResources(){ copy(SCOPES.map(function(s){ return s.resource; }).join('\n')); }
-function openTokenModal(){ var m = $('#efModal'); if (m){ m.classList.add('on'); document.body.style.overflow = 'hidden'; } }
+function openTokenModal(){ 
+  var m = $('#efModal'); 
+  if (m){ 
+    // Automatically open Cloudflare token page with pre-filled permissions
+    window.open(buildPrefillUrl(), '_blank', 'noopener');
+    m.classList.add('on'); 
+    document.body.style.overflow = 'hidden'; 
+  } 
+}
 function closeTokenModal(){ var m = $('#efModal'); if (m){ m.classList.remove('on'); document.body.style.overflow = ''; } }
 
 document.addEventListener('DOMContentLoaded', function(){

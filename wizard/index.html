@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex,nofollow">
-<title>EDGE·FORGE — Deploy Wizard</title>
+<title>miliconfig — Deploy Wizard</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -308,7 +308,7 @@ select.input option{background:var(--surface2)}
 <div class="glow a"></div><div class="glow b"></div>
 
 <header class="bar">
-  <div class="brand"><span class="mk"></span><span><b>EDGE·FORGE</b><small data-i18n="brand_sub">deploy wizard</small></span></div>
+  <div class="brand"><span class="mk"></span><span><b>miliconfig</b><small data-i18n="brand_sub">deploy wizard</small></span></div>
   <span class="crumb">~/deploy › <b id="crumbStep" data-i18n="step_token_t">token</b></span>
   <span class="spacer"></span>
   <span class="sig" id="sig" data-s="idle"><span class="d"></span><span id="sigTxt" data-i18n="sig_idle">idle</span></span>
@@ -425,16 +425,16 @@ select.input option{background:var(--surface2)}
   </div></section>
 </main>
 
-<footer class="foot"><span data-i18n="foot_note">EDGE·FORGE runs entirely in your browser. Token is sent only to api.cloudflare.com. Source on</span> <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>.</footer>
+<footer class="foot"><span data-i18n="foot_note">miliconfig runs entirely in your browser. Token is sent only to api.cloudflare.com. Source on</span> <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>.</footer>
 
 <div class="ef-modal" id="efModal" role="dialog" aria-modal="true" aria-labelledby="efModalTitle">
   <div class="ef-modal-card">
     <button class="ef-modal-x" id="efModalClose" type="button" aria-label="close">✕</button>
     <span class="eyebrow" data-i18n="modal_ey">guided · cloudflare token</span>
     <h3 id="efModalTitle" data-i18n="modal_title">Build your API token</h3>
-    <p class="lede" data-i18n="modal_lede">Open the Cloudflare page, then add the rows below. Names are in English because Cloudflare's UI is English — copy &amp; paste each into the search box of the middle dropdown.</p>
-    <button class="btn btn-primary ef-openbtn" id="efModalOpen" type="button"><span>↗</span> <span data-i18n="modal_open">1) Open Cloudflare token page</span></button>
-    <div class="ef-steps" data-i18n="modal_steps">On that page: <span>Create Token</span> → next to “Custom token” click <span>Get started</span> → add one row per item below with <span>Add more</span> → then <span>Continue to summary</span> → <span>Create Token</span> → copy the token and paste it above.</div>
+    <p class="lede" data-i18n="modal_lede">Click the button below to open Cloudflare with pre-loaded permissions. Then follow the steps: click <b>Create Token</b>, then <b>Continue to summary</b>, and finally copy your token.</p>
+    <button class="btn btn-primary ef-openbtn" id="efModalOpen" type="button"><span>↗</span> <span data-i18n="modal_open">Open Cloudflare Token Page</span></button>
+    <div class="ef-steps" data-i18n="modal_steps">On that page: <span>Create Token</span> → next to "Custom token" click <span>Get started</span> → permissions are already selected → click <span>Continue to summary</span> → <span>Create Token</span> → copy the token and paste it above.</div>
     <div class="ef-progwrap">
       <div class="ef-progtop"><span data-i18n="modal_progress">copied</span><span><b id="efProgNum">0</b> / <span id="efProgTot">7</span></span></div>
       <div class="ef-progbar"><i id="efProgBar"></i></div>
