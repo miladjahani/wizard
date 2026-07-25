@@ -7,7 +7,7 @@
 'use strict';
 
 /* ---- worker source fallback URL (override in UI if needed) ---- */
-var WORKER_SOURCE_URL = 'https://raw.githubusercontent.com/YOUR_USER/YOUR_REPO/main/worker.js';
+var WORKER_SOURCE_URL = './worker-source.js';
 var API = 'https://api.cloudflare.com/client/v4';   // legacy, unused now (proxy handles it)
 var COMPAT = '2025-01-01';
 
@@ -62,7 +62,7 @@ en: {
  qs_step3_t:'Create token', qs_step3_d:'Permissions are pre-loaded — open guided builder.', qs_step3_btn:'Build token',
  modal_ey:'guided · cloudflare token', modal_title:'Build your API token',
  modal_lede:'Click the button below to open Cloudflare with pre-loaded permissions. Then follow the steps: click Create Token, then Continue to summary, and finally copy your token.',
- modal_open:'Open Cloudflare Token Page',
+ modal_open:'Open Cloudflare Token Builder',
 modal_steps:'On that page: <span>Create Token</span> → next to "Custom token" click <span>Get started</span> → permissions are already selected → click <span>Continue to summary</span> → <span>Create Token</span> → copy the token and paste it above.',
  modal_progress:'copied', modal_alldone:'All set! Now hit “Continue to summary” → “Create Token”.',
  modal_note:'After your first successful Verify, the wizard memorizes each permission\'s ID — next time this button pre-fills the form automatically.',
@@ -117,7 +117,7 @@ fa: {
  qs_step3_t:'ساخت توکن', qs_step3_d:'دسترسی‌ها از قبل آماده‌اند — سازندهٔ راهنما را باز کن.', qs_step3_btn:'ساخت توکن',
  modal_ey:'راهنما · توکن کلودفلر', modal_title:'توکن API خود را بساز',
  modal_lede:'صفحهٔ کلودفلر را باز کن، بعد ردیف‌های زیر را اضافه کن. نام‌ها انگلیسی‌اند چون رابط کلودفر انگلیسی است — هر کدام را در کادر جستجوی dropdown وسط پیست کن.',
- modal_open:'باز کردن صفحهٔ توکن کلودفر',
+ modal_open:'باز کردن صفحهٔ ساخت توکن کلودفر',
  modal_steps:'در آن صفحه: <span>Create Token</span> → جلوی “Custom token” روی <span>Get started</span> بزن → برای هر مورد زیر با <span>Add more</span> یک ردیف بساز → بعد <span>Continue to summary</span> → <span>Create Token</span> → توکن را کپی کن و بالا بچسبان.',
  modal_progress:'کپی‌شده', modal_alldone:'همه آماده‌اند! حالا “Continue to summary” → “Create Token” را بزن.',
  modal_note:'بعد از اولین تأیید (Verify) موفق، ویزارد شناسهٔ هر دسترسی را به‌خاطر می‌سپارد — دفعهٔ بعد این دکمه فرم را خودکار می‌چیند.',
@@ -582,8 +582,7 @@ function copyAllResources(){ copy(SCOPES.map(function(s){ return s.resource; }).
 function openTokenModal(){ 
   var m = $('#efModal'); 
   if (m){ 
-    // Automatically open Cloudflare token page with pre-filled permissions
-    window.open(buildPrefillUrl(), '_blank', 'noopener');
+    // First show the modal with instructions, user clicks button inside to open Cloudflare
     m.classList.add('on'); 
     document.body.style.overflow = 'hidden'; 
   } 
