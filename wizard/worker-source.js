@@ -45,6 +45,8 @@ let 键值配置 = {};
 let 键值配置上次加载 = 0;
 const 键值缓存期限 = 30 * 1000; // 30秒缓存（短窗口内跳过版本检查）
 let 键值配置版本 = '';
+// 面板自身版本号 + 自动更新相关默认设置
+const 面板版本 = 'v1.0.0';
 const 配置默认值 = {
   wk: '',
   ev: 'yes',
@@ -75,7 +77,13 @@ const 配置默认值 = {
   ipv6: 'yes',
   ispMobile: 'yes',
   ispUnicom: 'yes',
-  ispTelecom: 'yes'
+  ispTelecom: 'yes',
+  // --- self-update settings (all stored in KV, never hardcoded) ---
+  updVerUrl: '',   // raw URL to a plain-text VERSION file, e.g. .../main/VERSION
+  updSrcUrl: '',   // raw URL to the latest worker-source.js
+  cfToken: '',     // Cloudflare API token, needs only "Workers Scripts:Edit"
+  cfAccountId: '', // Cloudflare account id the worker lives in
+  cfScriptName: '' // the Worker's script name on Cloudflare
 };
 
 function 是否开启值(值, 默认启用 = false) {
@@ -805,6 +813,26 @@ export default {
             'Content-Type': 'application/json'
           }
         });
+      }
+      if (网址698.pathname.includes('/api/update')) {
+        const 路径部分列表680 = 网址698.pathname.split('/').filter(参数值679 => 参数值679);
+        const 接口索引678 = 路径部分列表680.indexOf('api');
+        if (接口索引678 > 0) {
+          const 路径值677 = 路径部分列表680.slice(0, 接口索引678);
+          const 路径值676 = 路径值677.join('/');
+          let 是否有效675 = false;
+          if (自定义路径 && 自定义路径.trim()) {
+            const 清理自定义路径674 = 自定义路径.trim().startsWith('/') ? 自定义路径.trim().substring(1) : 自定义路径.trim();
+            是否有效675 = 路径值676 === 清理自定义路径674;
+          } else {
+            是否有效675 = 是否有效格式(路径值676) && 路径值676 === 认证令牌;
+          }
+          if (!是否有效675) {
+            return new Response(JSON.stringify({ error: '路径验证失败' }), { status: 403, headers: { 'Content-Type': 'application/json' } });
+          }
+          return 请求735.method === 'POST' ? await 处理更新应用接口(请求735, 本地值734) : await 处理更新检查接口(请求735, 本地值734);
+        }
+        return new Response(JSON.stringify({ error: '无效的API路径' }), { status: 404, headers: { 'Content-Type': 'application/json' } });
       }
       if (请求735.method === 'POST' && 启用扩展传输) {
         const 结果值684 = await 处理扩展超文本值(请求735);
@@ -5121,7 +5149,33 @@ async function 处理订阅值(请求241, 用户240 = null) {
                 </div>
                 <div id="statusMessage" style="display: none; padding: 10px; margin: 10px 0; border: 1px solid #c8f135; background: rgba(8,10,14,0.8); color: #c8f135; "></div>
             </div>
-            
+
+            <div class="card">
+                <h2 class="card-title">${是否值236 ? 'به‌روزرسانی پنل' : '面板更新'}</h2>
+                <div style="margin-bottom:14px;color:#9aa6b8;font-size:0.85rem;">
+                    ${是否值236 ? 'نسخه فعلی: ' : '当前版本: '}<b style="color:#c8f135;">${面板版本}</b>
+                    &nbsp;·&nbsp;<span id="updLatestLabel">${是否值236 ? 'نسخه‌ی جدید هنوز بررسی نشده' : '尚未检查最新版本'}</span>
+                </div>
+                <div style="display:grid;grid-template-columns:1fr;gap:10px;margin-bottom:14px;">
+                    <input type="text" id="updVerUrl" placeholder="${是否值236 ? 'آدرس فایل VERSION (raw) برای بررسی نسخه جدید' : 'VERSION 文件的 raw 地址'}" style="width:100%;padding:10px;background:rgba(0,0,0,0.8);border:1px solid #c8f135;color:#c8f135;font-family:'JetBrains Mono',monospace;font-size:13px;">
+                    <input type="text" id="updSrcUrl" placeholder="${是否值236 ? 'آدرس worker-source.js جدید (raw)' : '最新 worker-source.js 的 raw 地址'}" style="width:100%;padding:10px;background:rgba(0,0,0,0.8);border:1px solid #c8f135;color:#c8f135;font-family:'JetBrains Mono',monospace;font-size:13px;">
+                    <input type="password" id="cfToken" placeholder="${是否值236 ? 'توکن API کلادفلر (فقط Workers Scripts:Edit)' : 'Cloudflare API Token（仅需 Workers Scripts:Edit）'}" style="width:100%;padding:10px;background:rgba(0,0,0,0.8);border:1px solid #c8f135;color:#c8f135;font-family:'JetBrains Mono',monospace;font-size:13px;">
+                    <input type="text" id="cfAccountId" placeholder="${是否值236 ? 'شناسه اکانت کلادفلر (Account ID)' : 'Cloudflare Account ID'}" style="width:100%;padding:10px;background:rgba(0,0,0,0.8);border:1px solid #c8f135;color:#c8f135;font-family:'JetBrains Mono',monospace;font-size:13px;">
+                    <input type="text" id="cfScriptName" placeholder="${是否值236 ? 'نام اسکریپت ورکر روی کلادفلر' : 'Worker 脚本名称'}" style="width:100%;padding:10px;background:rgba(0,0,0,0.8);border:1px solid #c8f135;color:#c8f135;font-family:'JetBrains Mono',monospace;font-size:13px;">
+                </div>
+                <div style="display:flex;gap:10px;flex-wrap:wrap;">
+                    <button type="button" id="updSaveBtn" style="background:rgba(200,241,53,0.15);border:1px solid #c8f135;padding:10px 18px;color:#c8f135;font-family:'Manrope',sans-serif;cursor:pointer;">${是否值236 ? 'ذخیره تنظیمات' : '保存设置'}</button>
+                    <button type="button" id="updCheckBtn" style="background:rgba(91,140,255,0.15);border:1px solid #5b8cff;padding:10px 18px;color:#5b8cff;font-family:'Manrope',sans-serif;cursor:pointer;">${是否值236 ? 'بررسی به‌روزرسانی' : '检查更新'}</button>
+                    <button type="button" id="updApplyBtn" style="background:rgba(61,220,132,0.15);border:1px solid #3ddc84;padding:10px 18px;color:#3ddc84;font-family:'Manrope',sans-serif;cursor:pointer;display:none;">${是否值236 ? 'دریافت و اعمال به‌روزرسانی' : '获取并应用更新'}</button>
+                </div>
+                <div id="updStatus" style="display:none;margin-top:12px;padding:10px;border:1px solid #c8f135;background:rgba(8,10,14,0.8);color:#c8f135;font-size:0.85rem;"></div>
+                <div style="margin-top:10px;color:#9aa6b8;font-size:0.75rem;">
+                    ${是否值236
+                      ? 'توکن فقط با اجازه‌ی «Workers Scripts:Edit» بساز، نه دسترسی کامل اکانت. این توکن در KV همین ورکر ذخیره می‌شود و هرگز جای دیگری فرستاده نمی‌شود.'
+                      : '请仅使用具有 "Workers Scripts:Edit" 权限的 Token，不要使用完整账户权限。该 Token 仅保存在本 Worker 的 KV 中，不会发送到任何其他地方。'}
+                </div>
+            </div>
+
             <div class="card">
                     <h2 class="card-title">${翻译值.relatedLinks}</h2>
                 <div style="text-align: center; margin: 20px 0;">
@@ -5930,6 +5984,11 @@ function 应用配置到界面(配置) {
   写入字段值('downgradeControl', 配置.qj);
   写入字段值('portControl', 配置.dkby);
   写入字段值('preferredControl', 配置.yxby);
+  写入字段值('updVerUrl', 配置.updVerUrl);
+  写入字段值('updSrcUrl', 配置.updSrcUrl);
+  写入字段值('cfToken', 配置.cfToken);
+  写入字段值('cfAccountId', 配置.cfAccountId);
+  写入字段值('cfScriptName', 配置.cfScriptName);
   同步联动界面状态();
 }
 
@@ -5964,7 +6023,12 @@ function 收集界面配置() {
     ipv6: 读取开关值('ipv6Enabled', true),
     ispMobile: 读取开关值('ispMobile', true),
     ispUnicom: 读取开关值('ispUnicom', true),
-    ispTelecom: 读取开关值('ispTelecom', true)
+    ispTelecom: 读取开关值('ispTelecom', true),
+    updVerUrl: 读取字段值('updVerUrl'),
+    updSrcUrl: 读取字段值('updSrcUrl'),
+    cfToken: 读取字段值('cfToken'),
+    cfAccountId: 读取字段值('cfAccountId'),
+    cfScriptName: 读取字段值('cfScriptName')
   };
   if (配置.ev === 'no' && 配置.et === 'no' && 配置.ex === 'no') {
     配置.ev = 'yes';
@@ -6191,6 +6255,76 @@ async function 重置全部配置() {
     }
   }
 }
+
+/* ---- self-update: save settings / check for update / pull & apply update ---- */
+function 显示更新状态(消息, 类型) {
+  const 元素 = document.getElementById('updStatus');
+  if (!元素) return;
+  元素.style.display = 'block';
+  元素.textContent = 消息;
+  元素.style.color = 类型 === 'error' ? '#ff5d73' : (类型 === 'ok' ? '#3ddc84' : '#c8f135');
+  元素.style.borderColor = 元素.style.color;
+}
+
+async function 保存更新设置() {
+  try {
+    const 响应 = await fetch(window.location.pathname + '/api/config', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        updVerUrl: document.getElementById('updVerUrl').value.trim(),
+        updSrcUrl: document.getElementById('updSrcUrl').value.trim(),
+        cfToken: document.getElementById('cfToken').value.trim(),
+        cfAccountId: document.getElementById('cfAccountId').value.trim(),
+        cfScriptName: document.getElementById('cfScriptName').value.trim()
+      })
+    });
+    const 结果 = await 响应.json().catch(() => ({}));
+    显示更新状态(结果.message || (响应.ok ? 'تنظیمات ذخیره شد' : 'ذخیره ناموفق بود'), 响应.ok ? 'ok' : 'error');
+  } catch (خطا) {
+    显示更新状态('ذخیره ناموفق: ' + خطا.message, 'error');
+  }
+}
+
+async function بررسی_به_روزرسانی() {
+  显示更新状态('در حال بررسی نسخه جدید…', 'info');
+  try {
+    const 响应 = await fetch(window.location.pathname + '/api/update');
+    const نتیجه = await 响应.json();
+    const برچسب = document.getElementById('updLatestLabel');
+    const دکمهاعمال = document.getElementById('updApplyBtn');
+    if (نتیجه.error) {
+      显示更新状态(نتیجه.error, 'error');
+      return;
+    }
+    if (برچسب) برچسب.textContent = 'آخرین نسخه: ' + (نتیجه.latest || '—');
+    if (نتیجه.hasUpdate) {
+      显示更新状态('نسخه جدید موجود است: ' + نتیجه.latest, 'ok');
+      if (دکمهاعمال) دکمهاعمال.style.display = 'inline-block';
+    } else {
+      显示更新状态('پنل شما به‌روز است (نسخه ' + نتیجه.current + ')', 'info');
+      if (دکمهاعمال) دکمهاعمال.style.display = 'none';
+    }
+  } catch (خطا) {
+    显示更新状态('بررسی نسخه ناموفق: ' + خطا.message, 'error');
+  }
+}
+
+async function اعمال_به_روزرسانی() {
+  if (!confirm('آیا مطمئنی؟ کد فعلی ورکر با نسخه جدید جایگزین می‌شود.')) return;
+  显示更新状态('در حال دریافت و اعمال به‌روزرسانی… چند ثانیه صبر کن', 'info');
+  try {
+    const 响应 = await fetch(window.location.pathname + '/api/update', { method: 'POST' });
+    const 结果 = await 响应.json();
+    显示更新状态(结果.message, 结果.success ? 'ok' : 'error');
+    if (结果.success) {
+      setTimeout(function () { window.location.reload(); }, 2000);
+    }
+  } catch (خطا) {
+    显示更新状态('به‌روزرسانی ناموفق: ' + خطا.message, 'error');
+  }
+}
+
 async function 检查加密问候状态() {
   const 加密客户端问候状态值 = document.getElementById('echStatus');
   if (!加密客户端问候状态值) return;
@@ -6348,6 +6482,9 @@ document.addEventListener('DOMContentLoaded', function () {
   });
   const 值值重置 = document.getElementById('cpBtnReset');
   if (值值重置) 值值重置.addEventListener('click', 重置全部配置);
+  const 值值更新保存 = document.getElementById('updSaveBtn'); if (值值更新保存) 值值更新保存.addEventListener('click', 保存更新设置);
+  const 值值更新检查 = document.getElementById('updCheckBtn'); if (值值更新检查) 值值更新检查.addEventListener('click', بررسی_به_روزرسانی);
+  const 值值更新应用 = document.getElementById('updApplyBtn'); if (值值更新应用) 值值更新应用.addEventListener('click', اعمال_به_روزرسانی);
 
   // 修改字段时把 FAB 标记为 "未保存"
   function 标记已修改() {
@@ -8038,6 +8175,78 @@ async function 处理配置接口(请求54, 环境值 = {}) {
     }
   });
 }
+/* ------------------------------------------------------------------
+   خودکارسازی به‌روزرسانی پنل (self-update)
+   - GET  /api/update  → مقایسه نسخه فعلی با نسخه‌ی موجود در آدرس VERSION
+   - POST /api/update  → دریافت worker-source.js جدید و آپلود آن روی همین Worker
+     از طریق Cloudflare API با توکنی که ادمین در تنظیمات ذخیره کرده.
+   هیچ آدرس یا توکنی هاردکد نشده؛ همه از KV (键值配置) خوانده می‌شود تا هر کاربر
+   بتواند منبع/توکن خودش را تنظیم کند و کاملاً اختیاری بماند.
+------------------------------------------------------------------- */
+async function 处理更新检查接口(请求, 环境值 = {}) {
+  if (请求.method !== 'GET') {
+    return new Response(JSON.stringify({ error: 'Method not allowed' }), { status: 405, headers: { 'Content-Type': 'application/json' } });
+  }
+  const 版本地址 = 获取配置文本值('updVerUrl', 配置默认值.updVerUrl, 环境值.updVerUrl);
+  if (!版本地址) {
+    return new Response(JSON.stringify({ current: 面板版本, latest: null, hasUpdate: false, message: 'آدرس بررسی نسخه تنظیم نشده' }), { headers: { 'Content-Type': 'application/json' } });
+  }
+  try {
+    const 响应 = await fetch(版本地址, { cf: { cacheTtl: 0 } });
+    if (!响应.ok) throw new Error('HTTP ' + 响应.status);
+    const 最新版本 = (await 响应.text()).trim();
+    return new Response(JSON.stringify({
+      current: 面板版本,
+      latest: 最新版本,
+      hasUpdate: !!最新版本 && 最新版本 !== 面板版本
+    }), { headers: { 'Content-Type': 'application/json' } });
+  } catch (错误) {
+    return new Response(JSON.stringify({ current: 面板版本, latest: null, hasUpdate: false, error: 'بررسی نسخه ناموفق: ' + 错误.message }), { status: 502, headers: { 'Content-Type': 'application/json' } });
+  }
+}
+
+async function 处理更新应用接口(请求, 环境值 = {}) {
+  if (请求.method !== 'POST') {
+    return new Response(JSON.stringify({ error: 'Method not allowed' }), { status: 405, headers: { 'Content-Type': 'application/json' } });
+  }
+  const 源码地址 = 获取配置文本值('updSrcUrl', 配置默认值.updSrcUrl, 环境值.updSrcUrl);
+  const 令牌 = 获取配置文本值('cfToken', 配置默认值.cfToken, 环境值.cfToken);
+  const 账户ID = 获取配置文本值('cfAccountId', 配置默认值.cfAccountId, 环境值.cfAccountId);
+  const 脚本名 = 获取配置文本值('cfScriptName', 配置默认值.cfScriptName, 环境值.cfScriptName);
+  if (!源码地址 || !令牌 || !账户ID || !脚本名) {
+    return new Response(JSON.stringify({
+      success: false,
+      message: 'برای به‌روزرسانی خودکار باید در تنظیمات مقادیر updSrcUrl، cfToken، cfAccountId و cfScriptName را وارد کنی'
+    }), { status: 400, headers: { 'Content-Type': 'application/json' } });
+  }
+  try {
+    const 源码响应 = await fetch(源码地址, { cf: { cacheTtl: 0 } });
+    if (!源码响应.ok) throw new Error('دریافت کد جدید ناموفق: HTTP ' + 源码响应.status);
+    const 新源码 = await 源码响应.text();
+    if (!新源码 || 新源码.length < 1000) throw new Error('محتوای دریافت‌شده معتبر به نظر نمی‌رسد');
+
+    const 元数据 = { main_module: 'worker.js', compatibility_date: '2024-09-23', compatibility_flags: ['nodejs_compat'] };
+    const 表单 = new FormData();
+    表单.append('metadata', JSON.stringify(元数据));
+    表单.append('worker.js', new Blob([新源码], { type: 'application/javascript+module' }), 'worker.js');
+
+    const 上传地址 = `https://api.cloudflare.com/client/v4/accounts/${账户ID}/workers/scripts/${脚本名}`;
+    const 上传响应 = await fetch(上传地址, {
+      method: 'PUT',
+      headers: { 'Authorization': `Bearer ${令牌}` },
+      body: 表单
+    });
+    const 上传结果 = await 上传响应.json().catch(() => ({}));
+    if (!上传响应.ok || 上传结果.success === false) {
+      const 错误信息 = (上传结果.errors && 上传结果.errors[0] && 上传结果.errors[0].message) || ('HTTP ' + 上传响应.status);
+      throw new Error(错误信息);
+    }
+    return new Response(JSON.stringify({ success: true, message: 'ورکر با موفقیت به‌روزرسانی شد. صفحه را رفرش کن.' }), { headers: { 'Content-Type': 'application/json' } });
+  } catch (错误) {
+    return new Response(JSON.stringify({ success: false, message: 'به‌روزرسانی ناموفق: ' + 错误.message }), { status: 500, headers: { 'Content-Type': 'application/json' } });
+  }
+}
+
 async function 处理优选地址列表接口(请求) {
   if (!键值存储) {
     return new Response(JSON.stringify({
