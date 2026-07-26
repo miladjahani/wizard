@@ -50,7 +50,7 @@ en: {
  foot_note:'miliconfig runs entirely in your browser. Token is sent only to api.cloudflare.com. Source on',
  err_token_empty:'paste a token first', err_token_invalid:'token rejected by Cloudflare', err_no_accounts:'no accounts visible — check token account scope',
  err_name_invalid:'name must be 1–63 chars: a–z, 0–9, hyphen (not at edges)', err_path_invalid:'path may contain only a–z A–Z 0–9 _ -', err_domain_needs_zone:'pick a zone for the custom domain',
- misc_copied:'copied to clipboard', misc_stored:'stored token loaded — verify to continue',
+ misc_copied:'copied to clipboard', misc_stored:'stored token loaded — verify to continue', misc_autocaught:'token auto-filled from clipboard — verifying…',
  l_verify:'Verifying token', l_accounts:'Listing accounts', l_zones:'Listing zones',
  l_source:'Fetching worker source', l_kv:'Creating KV namespace', l_upload:'Uploading & deploying script',
  l_devroute:'Enabling workers.dev route', l_subdomain:'Reading workers.dev subdomain',
@@ -105,7 +105,7 @@ fa: {
  foot_note:'miliconfig کاملاً در مرورگر تو اجرا می‌شود. توکن فقط به api.cloudflare.com فرستاده می‌شود. منبع روی',
  err_token_empty:'اول یک توکن بچسبان', err_token_invalid:'توکن توسط کلودفلر رد شد', err_no_accounts:'هیچ حسابی دیده نمی‌شود — محدودهٔ حساب توکن را بررسی کن',
  err_name_invalid:'نام باید ۱–۶۳ کاراکتر باشد: a–z، 0–9، خط‌تیره (نه در ابتدا/انتها)', err_path_invalid:'مسیر فقط مجاز به a–z A–Z 0–9 _ -', err_domain_needs_zone:'برای دامنهٔ سفارشی یک zone انتخاب کن',
- misc_copied:'در کلیپ‌بورد کپی شد', misc_stored:'توکن ذخیره‌شده بارگذاری شد — برای ادامه بررسی کن',
+ misc_copied:'در کلیپ‌بورد کپی شد', misc_stored:'توکن ذخیره‌شده بارگذاری شد — برای ادامه بررسی کن', misc_autocaught:'توکن به‌صورت خودکار از کلیپ‌بورد گرفته شد — در حال بررسی…',
  l_verify:'بررسی توکن', l_accounts:'فهرست حساب‌ها', l_zones:'فهرست zoneها',
  l_source:'دریافت منبع ورکر', l_kv:'ساخت فضای KV', l_upload:'آپلود و استقرار اسکریپت',
  l_devroute:'فعال‌سازی مسیر workers.dev', l_subdomain:'خواندن زیردامنهٔ workers.dev',
@@ -589,13 +589,38 @@ function openTokenModal(){
 }
 function closeTokenModal(){ var m = $('#efModal'); if (m){ m.classList.remove('on'); document.body.style.overflow = ''; } }
 
+/* ---- auto-catch: watch the clipboard for a token when user comes back to this tab ----
+   Cloudflare itself still requires the user to click "Continue to summary" → "Create Token"
+   on dash.cloudflare.com — that consent step can't be skipped or automated from here, it's
+   enforced on Cloudflare's side for account security. This only removes the copy/switch-tab/
+   paste busywork *after* the user has already created the token themselves. */
+var TOKEN_BUILDER_OPENED = false;
+var TOKEN_LOOK_RE = /^[A-Za-z0-9_-]{30,60}$/; // CF tokens are ~40 char base64url strings
+
+function tryAutoCatchToken(){
+  if (!TOKEN_BUILDER_OPENED) return;
+  if (!navigator.clipboard || !navigator.clipboard.readText) return;
+  navigator.clipboard.readText().then(function(text){
+    var val = String(text || '').trim();
+    if (!TOKEN_LOOK_RE.test(val)) return; // not something that looks like a fresh token, leave it
+    if ($('#token').value.trim() === val) return; // already filled, avoid double-verify loops
+    $('#token').value = val;
+    TOKEN_BUILDER_OPENED = false;
+    closeTokenModal();
+    toast(T('misc_autocaught') || 'token auto-filled from clipboard — verifying…');
+    doVerify();
+  }).catch(function(){ /* permission denied or blocked — user pastes manually, no big deal */ });
+}
+document.addEventListener('visibilitychange', function(){ if (document.visibilityState === 'visible') tryAutoCatchToken(); });
+window.addEventListener('focus', tryAutoCatchToken);
+
 document.addEventListener('DOMContentLoaded', function(){
   restoreScopeIds();
   renderChecklist();
   var qe = $('#qsEmail');  if (qe) qe.onclick = function(){ window.open(QS_LINKS.email, '_blank', 'noopener'); };
   var qs = $('#qsSignup'); if (qs) qs.onclick = function(){ window.open(QS_LINKS.signup, '_blank', 'noopener'); };
   var qt = $('#qsToken');  if (qt) qt.onclick = openTokenModal;
-  var mo = $('#efModalOpen'); if (mo) mo.onclick = function(){ window.open(buildPrefillUrl(), '_blank', 'noopener'); };
+  var mo = $('#efModalOpen'); if (mo) mo.onclick = function(){ TOKEN_BUILDER_OPENED = true; window.open(buildPrefillUrl(), '_blank', 'noopener'); };
   var mc = $('#efModalClose'); if (mc) mc.onclick = closeTokenModal;
   var mc2 = $('#efModalClose2'); if (mc2) mc2.onclick = closeTokenModal;
   var ma = $('#efModalCopyAll'); if (ma) ma.onclick = copyAllResources;

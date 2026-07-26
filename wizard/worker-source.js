@@ -1046,27 +1046,27 @@ export default {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>${翻译值659.title}</title>
         <style>
-            @import url('https://fonts.googleapis.com/css2?family=Google+Sans+Text:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Vazirmatn:wght@400;500;600;700&display=swap');
             :root {
-                --md-bg: #141218;
-                --md-bg-2: #1D1B20;
-                --md-surface: #211F26;
-                --md-surface-2: #2B2930;
-                --md-surface-3: #36343B;
-                --md-primary: #D0BCFF;
-                --md-primary-d: #B69DF8;
-                --md-on-primary: #381E72;
-                --md-secondary: #EFB8C8;
-                --md-secondary-d: #7D5260;
-                --md-tertiary: #9A82DB;
-                --md-yellow: #FFD54F;
-                --md-success: #81C995;
-                --md-error: #F2B8B5;
-                --md-warning: #FDD663;
-                --md-text: #E6E0E9;
-                --md-text-dim: #CAC4D0;
-                --md-outline: rgba(230, 224, 233, 0.18);
-                --md-font: 'Google Sans Text', Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+                --md-bg: #080a0e;
+                --md-bg-2: #0b0e14;
+                --md-surface: #10141c;
+                --md-surface-2: #141a24;
+                --md-surface-3: #1b2230;
+                --md-primary: #c8f135;
+                --md-primary-d: #a6cf1d;
+                --md-on-primary: #0a0f05;
+                --md-secondary: #5b8cff;
+                --md-secondary-d: #3f5fb0;
+                --md-tertiary: #ffb454;
+                --md-yellow: #ffb454;
+                --md-success: #3ddc84;
+                --md-error: #ff5d73;
+                --md-warning: #ffb454;
+                --md-text: #eef2f7;
+                --md-text-dim: #9aa6b8;
+                --md-outline: rgba(238,242,247,0.18);
+                --md-font: 'Manrope', 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
                 --cp-bg: var(--md-bg);
                 --cp-bg-2: var(--md-bg-2);
                 --cp-cyan: var(--md-primary);
@@ -1087,8 +1087,8 @@ export default {
             body {
                 font-family: var(--md-font);
                 background:
-                    radial-gradient(circle at 15% 15%, rgba(208,188,255,0.16) 0%, transparent 40%),
-                    radial-gradient(circle at 85% 85%, rgba(239,184,200,0.14) 0%, transparent 40%),
+                    radial-gradient(circle at 15% 15%, rgba(200,241,53,0.16) 0%, transparent 40%),
+                    radial-gradient(circle at 85% 85%, rgba(91,140,255,0.14) 0%, transparent 40%),
                     var(--md-bg);
                 color: var(--md-text);
                 min-height: 100vh;
@@ -1164,7 +1164,7 @@ export default {
             }
             .terminal-input:focus {
                 border-color: var(--md-primary);
-                box-shadow: 0 0 0 3px rgba(208,188,255,0.18);
+                box-shadow: 0 0 0 3px rgba(200,241,53,0.18);
             }
             .terminal-input::placeholder { color: var(--md-text-dim); opacity: 0.75; }
             .terminal-cursor { display: none; }
@@ -1307,7 +1307,7 @@ function 创建矩阵雨() {
   const 矩阵值 = document.getElementById('matrixCodeRain');
   if (!矩阵值) return;
   const 赛博字符列表 = '01アイウエオカキクケコサシスセソタチツテトナニヌネノ$%#@!?<>+=ABCDEF';
-  const 调色板 = ['#D0BCFF', '#EFB8C8', '#9A82DB', '#81C995'];
+  const 调色板 = ['#c8f135', '#5b8cff', '#ffb454', '#3ddc84'];
   const 列数 = Math.floor(window.innerWidth / 20);
   for (let 索引值 = 0; 索引值 < 列数; 索引值++) {
     const 列10005 = document.createElement('div');
@@ -1337,7 +1337,7 @@ function 创建矩阵雨() {
           const 目标 = 字符列表[Math.floor(Math.random() * 字符列表.length)];
           const 本地值10004 = 目标.style.color;
           目标.style.color = '#ffffff';
-          目标.style.textShadow = '0 0 10px #ffffff, 0 0 18px #D0BCFF';
+          目标.style.textShadow = '0 0 10px #ffffff, 0 0 18px #c8f135';
           setTimeout(function () {
             目标.style.color = 本地值10004;
             目标.style.textShadow = '';
@@ -4038,27 +4038,27 @@ async function 处理订阅值(请求241, 用户240 = null) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>${翻译值.title}</title>
         <style>
-            @import url('https://fonts.googleapis.com/css2?family=Google+Sans+Text:wght@400;500;700&family=Roboto:wght@400;500;700;900&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Vazirmatn:wght@400;500;600;700&display=swap');
             :root {
-                --md-bg: #141218;
-                --md-bg-2: #1D1B20;
-                --md-surface: #211F26;
-                --md-surface-2: #2B2930;
-                --md-surface-3: #36343B;
-                --md-primary: #D0BCFF;
-                --md-primary-d: #B69DF8;
-                --md-on-primary: #381E72;
-                --md-secondary: #EFB8C8;
-                --md-secondary-d: #7D5260;
-                --md-tertiary: #9A82DB;
-                --md-yellow: #FFD54F;
-                --md-success: #81C995;
-                --md-error: #F2B8B5;
-                --md-warning: #FDD663;
-                --md-text: #E6E0E9;
-                --md-text-dim: #CAC4D0;
-                --md-outline: rgba(230, 224, 233, 0.14);
-                --md-outline-strong: rgba(230, 224, 233, 0.28);
+                --md-bg: #080a0e;
+                --md-bg-2: #0b0e14;
+                --md-surface: #10141c;
+                --md-surface-2: #141a24;
+                --md-surface-3: #1b2230;
+                --md-primary: #c8f135;
+                --md-primary-d: #a6cf1d;
+                --md-on-primary: #0a0f05;
+                --md-secondary: #5b8cff;
+                --md-secondary-d: #3f5fb0;
+                --md-tertiary: #ffb454;
+                --md-yellow: #ffb454;
+                --md-success: #3ddc84;
+                --md-error: #ff5d73;
+                --md-warning: #ffb454;
+                --md-text: #eef2f7;
+                --md-text-dim: #9aa6b8;
+                --md-outline: rgba(238,242,247,0.14);
+                --md-outline-strong: rgba(238,242,247,0.28);
                 --md-r-sm: 12px;
                 --md-r-md: 16px;
                 --md-r-lg: 24px;
@@ -4066,7 +4066,7 @@ async function 处理订阅值(请求241, 用户240 = null) {
                 --md-elev-1: 0 1px 3px rgba(0,0,0,0.35), 0 1px 2px rgba(0,0,0,0.3);
                 --md-elev-2: 0 3px 8px rgba(0,0,0,0.4), 0 1px 3px rgba(0,0,0,0.3);
                 --md-elev-3: 0 8px 22px rgba(0,0,0,0.45), 0 2px 6px rgba(0,0,0,0.3);
-                --md-font: 'Google Sans Text', Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+                --md-font: 'Manrope', 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
                 --cp-bg: var(--md-bg);
                 --cp-bg-2: var(--md-bg-2);
                 --cp-bg-3: var(--md-surface);
@@ -4090,9 +4090,9 @@ async function 处理订阅值(请求241, 用户240 = null) {
             body {
                 font-family: var(--md-font);
                 background:
-                    radial-gradient(circle at 12% 8%, rgba(208,188,255,0.14) 0%, transparent 38%),
-                    radial-gradient(circle at 88% 92%, rgba(239,184,200,0.12) 0%, transparent 40%),
-                    radial-gradient(circle at 90% 5%, rgba(154,130,219,0.10) 0%, transparent 35%),
+                    radial-gradient(circle at 12% 8%, rgba(200,241,53,0.14) 0%, transparent 38%),
+                    radial-gradient(circle at 88% 92%, rgba(91,140,255,0.12) 0%, transparent 40%),
+                    radial-gradient(circle at 90% 5%, rgba(255,180,84,0.10) 0%, transparent 35%),
                     var(--md-bg);
                 color: var(--md-text);
                 min-height: 100vh;
@@ -4216,7 +4216,7 @@ async function 处理订阅值(请求241, 用户240 = null) {
                 border-radius: var(--md-r-md) !important;
                 padding: 14px 16px !important;
                 word-break: break-all;
-                font-family: 'Roboto Mono', monospace;
+                font-family: 'JetBrains Mono', monospace;
                 color: var(--md-primary) !important;
                 margin-top: 14px;
                 box-shadow: none !important;
@@ -4331,7 +4331,7 @@ async function 处理订阅值(请求241, 用户240 = null) {
             input::placeholder { color: var(--md-text-dim) !important; opacity: 0.7; }
             input:focus, select:focus, textarea:focus {
                 border-color: var(--md-primary) !important;
-                box-shadow: 0 0 0 3px rgba(208,188,255,0.18) !important;
+                box-shadow: 0 0 0 3px rgba(200,241,53,0.18) !important;
             }
             select option { background: var(--md-surface-2); color: var(--md-text); }
             input[type="checkbox"], input[type="radio"] {
@@ -4504,7 +4504,7 @@ async function 处理订阅值(请求241, 用户240 = null) {
             }
             .cp-fab-save:hover {
                 transform: translateY(-2px);
-                box-shadow: var(--md-elev-3), 0 0 0 4px rgba(208,188,255,0.15) !important;
+                box-shadow: var(--md-elev-3), 0 0 0 4px rgba(200,241,53,0.15) !important;
                 color: var(--md-on-primary) !important;
             }
             .cp-fab-save .cp-fab-icon {
@@ -4527,7 +4527,7 @@ async function 处理订阅值(请求241, 用户240 = null) {
             .cp-action-bar.cp-dirty .cp-fab-save .cp-fab-dot { opacity: 1; }
             @keyframes cp-fab-dirty-pulse {
                 0%, 100% { box-shadow: var(--md-elev-3); }
-                50%      { box-shadow: var(--md-elev-3), 0 0 0 6px rgba(208,188,255,0.22); }
+                50%      { box-shadow: var(--md-elev-3), 0 0 0 6px rgba(200,241,53,0.22); }
             }
             /* Secondary mini buttons — Material tonal icon buttons */
             .cp-action-btn {
@@ -4794,27 +4794,27 @@ async function 处理订阅值(请求241, 用户240 = null) {
             </div>
             <div class="card">
                     <h2 class="card-title">${翻译值.systemStatus}</h2>
-                <div id="systemStatus" style="margin: 20px 0; padding: 15px; background: rgba(8, 4, 28, 0.8); border: 2px solid #D0BCFF; box-shadow: 0 0 20px rgba(0, 240, 255, 0.3), inset 0 0 15px rgba(0, 240, 255, 0.1); position: relative; overflow: hidden;">
-                        <div style="color: #D0BCFF; margin-bottom: 15px; font-weight: bold; ">[ ${翻译值.checking} ]</div>
-                        <div id="regionStatus" style="margin: 8px 0; color: #D0BCFF; font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; ">${翻译值.workerRegion}${翻译值.checking}</div>
-                        <div id="geoInfo" style="margin: 8px 0; color: #CAC4D0; font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 0.9rem; ">${翻译值.detectionMethod}${翻译值.checking}</div>
-                        <div id="backupStatus" style="margin: 8px 0; color: #D0BCFF; font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; ">${翻译值.proxyIPStatus}${翻译值.checking}</div>
-                        <div id="currentIP" style="margin: 8px 0; color: #D0BCFF; font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; ">${翻译值.currentIP}${翻译值.checking}</div>
-                        <div id="echStatus" style="margin: 8px 0; color: #D0BCFF; font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;  font-size: 0.9rem;">ECH状态: ${翻译值.checking}</div>
-                        <div id="regionMatch" style="margin: 8px 0; color: #D0BCFF; font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; ">${翻译值.regionMatch}${翻译值.checking}</div>
-                        <div id="selectionLogic" style="margin: 8px 0; color: #CAC4D0; font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 0.9rem; ">${翻译值.selectionLogic}${翻译值.selectionLogicText}</div>
+                <div id="systemStatus" style="margin: 20px 0; padding: 15px; background: rgba(8,10,14,0.8); border: 2px solid #c8f135; box-shadow: 0 0 20px rgba(200,241,53,0.3), inset 0 0 15px rgba(200,241,53,0.1); position: relative; overflow: hidden;">
+                        <div style="color: #c8f135; margin-bottom: 15px; font-weight: bold; ">[ ${翻译值.checking} ]</div>
+                        <div id="regionStatus" style="margin: 8px 0; color: #c8f135; font-family: 'Manrope', 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; ">${翻译值.workerRegion}${翻译值.checking}</div>
+                        <div id="geoInfo" style="margin: 8px 0; color: #9aa6b8; font-family: 'Manrope', 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 0.9rem; ">${翻译值.detectionMethod}${翻译值.checking}</div>
+                        <div id="backupStatus" style="margin: 8px 0; color: #c8f135; font-family: 'Manrope', 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; ">${翻译值.proxyIPStatus}${翻译值.checking}</div>
+                        <div id="currentIP" style="margin: 8px 0; color: #c8f135; font-family: 'Manrope', 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; ">${翻译值.currentIP}${翻译值.checking}</div>
+                        <div id="echStatus" style="margin: 8px 0; color: #c8f135; font-family: 'Manrope', 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;  font-size: 0.9rem;">ECH状态: ${翻译值.checking}</div>
+                        <div id="regionMatch" style="margin: 8px 0; color: #c8f135; font-family: 'Manrope', 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; ">${翻译值.regionMatch}${翻译值.checking}</div>
+                        <div id="selectionLogic" style="margin: 8px 0; color: #9aa6b8; font-family: 'Manrope', 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 0.9rem; ">${翻译值.selectionLogic}${翻译值.selectionLogicText}</div>
                 </div>
             </div>
             <div class="card" id="configCard" style="display: none;">
                     <h2 class="card-title">${翻译值.configManagement}</h2>
-                <div id="kvStatus" style="margin-bottom: 20px; padding: 10px; background: rgba(8, 4, 28, 0.8); border: 1px solid #D0BCFF; color: #D0BCFF;">
+                <div id="kvStatus" style="margin-bottom: 20px; padding: 10px; background: rgba(8,10,14,0.8); border: 1px solid #c8f135; color: #c8f135;">
                     ${翻译值.kvStatusChecking}
                 </div>
                 <div id="configContent" style="display: none;">
                     <form id="regionForm" style="margin-bottom: 20px;">
                         <div style="margin-bottom: 15px;">
-                                <label style="display: block; margin-bottom: 8px; color: #D0BCFF; font-weight: bold; ">${翻译值.specifyRegion}</label>
-                            <select id="wkRegion" style="width: 100%; padding: 12px; background: rgba(0, 0, 0, 0.8); border: 2px solid #D0BCFF; color: #D0BCFF; font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 14px;">
+                                <label style="display: block; margin-bottom: 8px; color: #c8f135; font-weight: bold; ">${翻译值.specifyRegion}</label>
+                            <select id="wkRegion" style="width: 100%; padding: 12px; background: rgba(0, 0, 0, 0.8); border: 2px solid #c8f135; color: #c8f135; font-family: 'Manrope', 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 14px;">
                                     <option value="">${翻译值.autoDetect}</option>
                                     <option value="HK">${翻译值.regionNames.HK}</option>
                                     <option value="US">${翻译值.regionNames.US}</option>
@@ -4827,52 +4827,52 @@ async function 处理订阅值(请求241, 用户240 = null) {
                                     <option value="FI">${翻译值.regionNames.FI}</option>
                                     <option value="GB">${翻译值.regionNames.GB}</option>
                             </select>
-                                <small id="wkRegionHint" style="color: #CAC4D0; font-size: 0.85rem; display: none;">⚠️ ${翻译值.customIPDisabledHint}</small>
+                                <small id="wkRegionHint" style="color: #9aa6b8; font-size: 0.85rem; display: none;">⚠️ ${翻译值.customIPDisabledHint}</small>
                         </div>
                     </form>
                     <form id="otherConfigForm" style="margin-bottom: 20px;">
                         <div style="margin-bottom: 15px;">
-                                <label style="display: block; margin-bottom: 8px; color: #D0BCFF; font-weight: bold; ">${翻译值.protocolSelection}</label>
-                            <div style="padding: 15px; background: rgba(15, 3, 40, 0.6); border: 1px solid #D0BCFF; border-radius: 5px;">
+                                <label style="display: block; margin-bottom: 8px; color: #c8f135; font-weight: bold; ">${翻译值.protocolSelection}</label>
+                            <div style="padding: 15px; background: rgba(11,14,20,0.6); border: 1px solid #c8f135; border-radius: 5px;">
                                 <div style="margin-bottom: 10px;">
-                                    <label style="display: inline-flex; align-items: center; cursor: pointer; color: #D0BCFF;">
+                                    <label style="display: inline-flex; align-items: center; cursor: pointer; color: #c8f135;">
                                         <input type="checkbox" id="ev" checked style="margin-right: 8px; width: 18px; height: 18px; cursor: pointer;">
                                             <span style="font-size: 1.1rem;">${翻译值.enableVLESS}</span>
                                     </label>
                                 </div>
                                 <div style="margin-bottom: 10px;">
-                                    <label style="display: inline-flex; align-items: center; cursor: pointer; color: #D0BCFF;">
+                                    <label style="display: inline-flex; align-items: center; cursor: pointer; color: #c8f135;">
                                         <input type="checkbox" id="et" style="margin-right: 8px; width: 18px; height: 18px; cursor: pointer;">
                                             <span style="font-size: 1.1rem;">${翻译值.enableTrojan}</span>
                                     </label>
                                 </div>
                                 <div style="margin-bottom: 10px;">
-                                    <label style="display: inline-flex; align-items: center; cursor: pointer; color: #D0BCFF;">
+                                    <label style="display: inline-flex; align-items: center; cursor: pointer; color: #c8f135;">
                                         <input type="checkbox" id="ex" style="margin-right: 8px; width: 18px; height: 18px; cursor: pointer;">
                                             <span style="font-size: 1.1rem;">${翻译值.enableXhttp}</span>
                                     </label>
                                 </div>
-                                <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(0, 240, 255, 0.3);">
+                                <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(200,241,53,0.3);">
                                     <div style="margin-bottom: 10px;">
-                                        <label style="display: inline-flex; align-items: center; cursor: pointer; color: #D0BCFF;">
+                                        <label style="display: inline-flex; align-items: center; cursor: pointer; color: #c8f135;">
                                             <input type="checkbox" id="ech" style="margin-right: 8px; width: 18px; height: 18px; cursor: pointer;">
                                                 <span style="font-size: 1.1rem;">${翻译值.enableECH}</span>
                                         </label>
-                                        <small style="color: #CAC4D0; font-size: 0.8rem; display: block; margin-top: 5px; margin-left: 26px;">${翻译值.enableECHHint}</small>
+                                        <small style="color: #9aa6b8; font-size: 0.8rem; display: block; margin-top: 5px; margin-left: 26px;">${翻译值.enableECHHint}</small>
                                     </div>
                                     <div style="margin-top: 15px; margin-bottom: 10px;">
-                                        <label style="display: block; margin-bottom: 8px; color: #D0BCFF; font-size: 0.95rem;">${翻译值.customDNS}</label>
-                                        <input type="text" id="customDNS" placeholder="${翻译值.customDNSPlaceholder}" style="width: 100%; padding: 10px; background: rgba(0, 0, 0, 0.8); border: 1px solid #D0BCFF; color: #D0BCFF; font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 13px;">
-                                        <small style="color: #CAC4D0; font-size: 0.8rem; display: block; margin-top: 5px;">${翻译值.customDNSHint}</small>
+                                        <label style="display: block; margin-bottom: 8px; color: #c8f135; font-size: 0.95rem;">${翻译值.customDNS}</label>
+                                        <input type="text" id="customDNS" placeholder="${翻译值.customDNSPlaceholder}" style="width: 100%; padding: 10px; background: rgba(0, 0, 0, 0.8); border: 1px solid #c8f135; color: #c8f135; font-family: 'Manrope', 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 13px;">
+                                        <small style="color: #9aa6b8; font-size: 0.8rem; display: block; margin-top: 5px;">${翻译值.customDNSHint}</small>
                                     </div>
                                     <div style="margin-bottom: 10px;">
-                                        <label style="display: block; margin-bottom: 8px; color: #D0BCFF; font-size: 0.95rem;">${翻译值.customECHDomain}</label>
-                                        <input type="text" id="customECHDomain" placeholder="${翻译值.customECHDomainPlaceholder}" style="width: 100%; padding: 10px; background: rgba(0, 0, 0, 0.8); border: 1px solid #D0BCFF; color: #D0BCFF; font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 13px;">
-                                        <small style="color: #CAC4D0; font-size: 0.8rem; display: block; margin-top: 5px;">${翻译值.customECHDomainHint}</small>
+                                        <label style="display: block; margin-bottom: 8px; color: #c8f135; font-size: 0.95rem;">${翻译值.customECHDomain}</label>
+                                        <input type="text" id="customECHDomain" placeholder="${翻译值.customECHDomainPlaceholder}" style="width: 100%; padding: 10px; background: rgba(0, 0, 0, 0.8); border: 1px solid #c8f135; color: #c8f135; font-family: 'Manrope', 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 13px;">
+                                        <small style="color: #9aa6b8; font-size: 0.8rem; display: block; margin-top: 5px;">${翻译值.customECHDomainHint}</small>
                                     </div>
                                     <div style="margin-bottom: 10px;">
-                                        <label style="display: block; margin-bottom: 8px; color: #D0BCFF; font-size: 0.95rem;">${翻译值.alpn}</label>
-                                        <select id="alpn" style="width: 100%; padding: 10px; background: rgba(0, 0, 0, 0.8); border: 1px solid #D0BCFF; color: #D0BCFF; font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 13px;">
+                                        <label style="display: block; margin-bottom: 8px; color: #c8f135; font-size: 0.95rem;">${翻译值.alpn}</label>
+                                        <select id="alpn" style="width: 100%; padding: 10px; background: rgba(0, 0, 0, 0.8); border: 1px solid #c8f135; color: #c8f135; font-family: 'Manrope', 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 13px;">
                                             <option value="">${翻译值.alpnDefault}</option>
                                             <option value="h3">h3</option>
                                             <option value="h2">h2</option>
@@ -4881,253 +4881,253 @@ async function 处理订阅值(请求241, 用户240 = null) {
                                             <option value="h2,http/1.1">h2,http/1.1</option>
                                             <option value="h3,h2,http/1.1">h3,h2,http/1.1</option>
                                         </select>
-                                        <small style="color: #CAC4D0; font-size: 0.8rem; display: block; margin-top: 5px;">${翻译值.alpnHint}</small>
+                                        <small style="color: #9aa6b8; font-size: 0.8rem; display: block; margin-top: 5px;">${翻译值.alpnHint}</small>
                                     </div>
                                 </div>
-                                <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(0, 240, 255, 0.3);">
-                                        <label style="display: block; margin-bottom: 8px; color: #D0BCFF; font-size: 0.95rem;">${翻译值.trojanPassword}</label>
-                                        <input type="text" id="tp" placeholder="${翻译值.trojanPasswordPlaceholder}" style="width: 100%; padding: 10px; background: rgba(0, 0, 0, 0.8); border: 1px solid #D0BCFF; color: #D0BCFF; font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 13px;">
-                                        <small style="color: #CAC4D0; font-size: 0.8rem; display: block; margin-top: 5px;">${翻译值.trojanPasswordHint}</small>
+                                <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(200,241,53,0.3);">
+                                        <label style="display: block; margin-bottom: 8px; color: #c8f135; font-size: 0.95rem;">${翻译值.trojanPassword}</label>
+                                        <input type="text" id="tp" placeholder="${翻译值.trojanPasswordPlaceholder}" style="width: 100%; padding: 10px; background: rgba(0, 0, 0, 0.8); border: 1px solid #c8f135; color: #c8f135; font-family: 'Manrope', 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 13px;">
+                                        <small style="color: #9aa6b8; font-size: 0.8rem; display: block; margin-top: 5px;">${翻译值.trojanPasswordHint}</small>
                                 </div>
-                                    <small style="color: #CAC4D0; font-size: 0.85rem; display: block; margin-top: 10px;">${翻译值.protocolHint}</small>
+                                    <small style="color: #9aa6b8; font-size: 0.85rem; display: block; margin-top: 10px;">${翻译值.protocolHint}</small>
                             </div>
                         </div>
                         <div style="margin-bottom: 15px;">
-                                <label style="display: block; margin-bottom: 8px; color: #D0BCFF; font-weight: bold; ">${翻译值.customHomepage}</label>
-                                <input type="text" id="customHomepage" placeholder="${翻译值.customHomepagePlaceholder}" style="width: 100%; padding: 12px; background: rgba(0, 0, 0, 0.8); border: 2px solid #D0BCFF; color: #D0BCFF; font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 14px;">
-                                <small style="color: #CAC4D0; font-size: 0.85rem;">${翻译值.customHomepageHint}</small>
+                                <label style="display: block; margin-bottom: 8px; color: #c8f135; font-weight: bold; ">${翻译值.customHomepage}</label>
+                                <input type="text" id="customHomepage" placeholder="${翻译值.customHomepagePlaceholder}" style="width: 100%; padding: 12px; background: rgba(0, 0, 0, 0.8); border: 2px solid #c8f135; color: #c8f135; font-family: 'Manrope', 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 14px;">
+                                <small style="color: #9aa6b8; font-size: 0.85rem;">${翻译值.customHomepageHint}</small>
                         </div>
                         <div style="margin-bottom: 15px;">
-                                <label style="display: block; margin-bottom: 8px; color: #D0BCFF; font-weight: bold; ">${翻译值.customPath}</label>
-                                <input type="text" id="customPath" placeholder="${是否值236 ? 'مثال: /mypath یا خالی بگذارید تا از UUID استفاده شود' : '例如: /mypath 或留空使用 UUID'}" style="width: 100%; padding: 12px; background: rgba(0, 0, 0, 0.8); border: 2px solid #D0BCFF; color: #D0BCFF; font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 14px;">
-                                <small style="color: #CAC4D0; font-size: 0.85rem;">${是否值236 ? 解码64('2YXYs9uM2LEg2KfYtNiq2LHYp9qpINiz2YHYp9ix2LTbjC4g2Kfar9ixINiu2KfZhNuMINio2q/YsNin2LHbjNivINin2LIgVVVJRCDYqNmHINi52YbZiNin2YYg2YXYs9uM2LEg2KfYs9iq2YHYp9iv2Ycg2YXbjOKAjNi02YjYry4=') : 解码64('6Ieq5a6a5LmJ6K6i6ZiF6Lev5b6E44CC55WZ56m65YiZ5L2/55SoIFVVSUQg5L2c5Li66Lev5b6E44CC')}</small>
+                                <label style="display: block; margin-bottom: 8px; color: #c8f135; font-weight: bold; ">${翻译值.customPath}</label>
+                                <input type="text" id="customPath" placeholder="${是否值236 ? 'مثال: /mypath یا خالی بگذارید تا از UUID استفاده شود' : '例如: /mypath 或留空使用 UUID'}" style="width: 100%; padding: 12px; background: rgba(0, 0, 0, 0.8); border: 2px solid #c8f135; color: #c8f135; font-family: 'Manrope', 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 14px;">
+                                <small style="color: #9aa6b8; font-size: 0.85rem;">${是否值236 ? 解码64('2YXYs9uM2LEg2KfYtNiq2LHYp9qpINiz2YHYp9ix2LTbjC4g2Kfar9ixINiu2KfZhNuMINio2q/YsNin2LHbjNivINin2LIgVVVJRCDYqNmHINi52YbZiNin2YYg2YXYs9uM2LEg2KfYs9iq2YHYp9iv2Ycg2YXbjOKAjNi02YjYry4=') : 解码64('6Ieq5a6a5LmJ6K6i6ZiF6Lev5b6E44CC55WZ56m65YiZ5L2/55SoIFVVSUQg5L2c5Li66Lev5b6E44CC')}</small>
                         </div>
                         <div style="margin-bottom: 15px;">
-                                <label style="display: block; margin-bottom: 8px; color: #D0BCFF; font-weight: bold; ">${翻译值.customIP}</label>
-                                <input type="text" id="customIP" placeholder="${是否值236 ? 'مثال: 1.2.3.4:443' : '例如: 1.2.3.4:443'}" style="width: 100%; padding: 12px; background: rgba(0, 0, 0, 0.8); border: 2px solid #D0BCFF; color: #D0BCFF; font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 14px;">
-                                <small style="color: #CAC4D0; font-size: 0.85rem;">${是否值236 ? 解码64('2KLYr9ix2LMg2Ygg2b7ZiNix2KogUHJveHlJUCDYs9mB2KfYsdi024w=') : 解码64('6Ieq5a6a5LmJUHJveHlJUOWcsOWdgOWSjOerr+WPow==')}</small>
+                                <label style="display: block; margin-bottom: 8px; color: #c8f135; font-weight: bold; ">${翻译值.customIP}</label>
+                                <input type="text" id="customIP" placeholder="${是否值236 ? 'مثال: 1.2.3.4:443' : '例如: 1.2.3.4:443'}" style="width: 100%; padding: 12px; background: rgba(0, 0, 0, 0.8); border: 2px solid #c8f135; color: #c8f135; font-family: 'Manrope', 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 14px;">
+                                <small style="color: #9aa6b8; font-size: 0.85rem;">${是否值236 ? 解码64('2KLYr9ix2LMg2Ygg2b7ZiNix2KogUHJveHlJUCDYs9mB2KfYsdi024w=') : 解码64('6Ieq5a6a5LmJUHJveHlJUOWcsOWdgOWSjOerr+WPow==')}</small>
                         </div>
                         <div style="margin-bottom: 15px;">
-                                <label style="display: block; margin-bottom: 8px; color: #D0BCFF; font-weight: bold; ">${翻译值.preferredIPs}</label>
-                                <input type="text" id="yx" placeholder="${是否值236 ? 'مثال: 1.2.3.4:443#گره هنگ‌کنگ,5.6.7.8:80#گره آمریکا,example.com:8443#گره سنگاپور' : '例如: 1.2.3.4:443#日本节点,5.6.7.8:80#美国节点,example.com:8443#新加坡节点'}" style="width: 100%; padding: 12px; background: rgba(0, 0, 0, 0.8); border: 2px solid #D0BCFF; color: #D0BCFF; font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 14px;">
-                                <small style="color: #CAC4D0; font-size: 0.85rem;">${是否值236 ? 'فرمت: IP:پورت#نام گره یا IP:پورت (بدون # از نام پیش‌فرض استفاده می‌شود). پشتیبانی از چندین مورد، با کاما جدا می‌شوند. <span style="color: #FDD663;">IP های اضافه شده از طریق API به طور خودکار در اینجا نمایش داده می‌شوند.</span>' : '格式: IP:端口#节点名称 或 IP:端口 (无#则使用默认名称)。支持多个，用逗号分隔。<span style="color: #FDD663;">API添加的IP会自动显示在这里。</span>'}</small>
+                                <label style="display: block; margin-bottom: 8px; color: #c8f135; font-weight: bold; ">${翻译值.preferredIPs}</label>
+                                <input type="text" id="yx" placeholder="${是否值236 ? 'مثال: 1.2.3.4:443#گره هنگ‌کنگ,5.6.7.8:80#گره آمریکا,example.com:8443#گره سنگاپور' : '例如: 1.2.3.4:443#日本节点,5.6.7.8:80#美国节点,example.com:8443#新加坡节点'}" style="width: 100%; padding: 12px; background: rgba(0, 0, 0, 0.8); border: 2px solid #c8f135; color: #c8f135; font-family: 'Manrope', 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 14px;">
+                                <small style="color: #9aa6b8; font-size: 0.85rem;">${是否值236 ? 'فرمت: IP:پورت#نام گره یا IP:پورت (بدون # از نام پیش‌فرض استفاده می‌شود). پشتیبانی از چندین مورد، با کاما جدا می‌شوند. <span style="color: #ffb454;">IP های اضافه شده از طریق API به طور خودکار در اینجا نمایش داده می‌شوند.</span>' : '格式: IP:端口#节点名称 或 IP:端口 (无#则使用默认名称)。支持多个，用逗号分隔。<span style="color: #ffb454;">API添加的IP会自动显示在这里。</span>'}</small>
                         </div>
                         <div style="margin-bottom: 15px;">
-                                <label style="display: block; margin-bottom: 8px; color: #D0BCFF; font-weight: bold; ">${翻译值.preferredIPsURL}</label>
-                                <input type="text" id="yxURL" placeholder="${是否值236 ? 'URL منبع لیست IP ترجیحی را وارد کنید' : '输入优选IP列表来源URL'}" style="width: 100%; padding: 12px; background: rgba(0, 0, 0, 0.8); border: 2px solid #D0BCFF; color: #D0BCFF; font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 14px;">
-                                <small style="color: #CAC4D0; font-size: 0.85rem;">${是否值236 ? 'URL منبع لیست IP ترجیحی سفارشی، اگر خالی بگذارید از آدرس پیش‌فرض استفاده می‌شود' : '自定义优选IP列表来源URL，留空则使用默认地址'}</small>
+                                <label style="display: block; margin-bottom: 8px; color: #c8f135; font-weight: bold; ">${翻译值.preferredIPsURL}</label>
+                                <input type="text" id="yxURL" placeholder="${是否值236 ? 'URL منبع لیست IP ترجیحی را وارد کنید' : '输入优选IP列表来源URL'}" style="width: 100%; padding: 12px; background: rgba(0, 0, 0, 0.8); border: 2px solid #c8f135; color: #c8f135; font-family: 'Manrope', 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 14px;">
+                                <small style="color: #9aa6b8; font-size: 0.85rem;">${是否值236 ? 'URL منبع لیست IP ترجیحی سفارشی، اگر خالی بگذارید از آدرس پیش‌فرض استفاده می‌شود' : '自定义优选IP列表来源URL，留空则使用默认地址'}</small>
                         </div>
                         
-                        <div style="margin-bottom: 20px; padding: 15px; background: rgba(20, 5, 50, 0.6); border: 2px solid #CAC4D0; border-radius: 8px;">
-                            <h4 style="color: #D0BCFF; margin: 0 0 15px 0; font-size: 1.1rem; ">⚡ ${翻译值.latencyTest}</h4>
+                        <div style="margin-bottom: 20px; padding: 15px; background: rgba(11,14,20,0.6); border: 2px solid #9aa6b8; border-radius: 8px;">
+                            <h4 style="color: #c8f135; margin: 0 0 15px 0; font-size: 1.1rem; ">⚡ ${翻译值.latencyTest}</h4>
                             <div style="display: flex; gap: 10px; margin-bottom: 12px; flex-wrap: wrap; align-items: center;">
                                 <div style="min-width: 120px;">
-                                    <label style="display: block; margin-bottom: 5px; color: #D0BCFF; font-size: 0.9rem;">${翻译值.ipSource}</label>
-                                    <select id="ipSourceSelect" style="width: 100%; padding: 10px; background: rgba(0, 0, 0, 0.8); border: 1px solid #D0BCFF; color: #D0BCFF; font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 13px; cursor: pointer;">
+                                    <label style="display: block; margin-bottom: 5px; color: #c8f135; font-size: 0.9rem;">${翻译值.ipSource}</label>
+                                    <select id="ipSourceSelect" style="width: 100%; padding: 10px; background: rgba(0, 0, 0, 0.8); border: 1px solid #c8f135; color: #c8f135; font-family: 'Manrope', 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 13px; cursor: pointer;">
                                         <option value="manual">${翻译值.manualInput}</option>
                                         <option value="cfRandom">${翻译值.cfRandomIP}</option>
                                         <option value="urlFetch">${翻译值.urlFetch}</option>
                                     </select>
                                 </div>
                                 <div style="width: 100px;">
-                                    <label style="display: block; margin-bottom: 5px; color: #D0BCFF; font-size: 0.9rem;">${翻译值.latencyTestPort}</label>
-                                    <input type="number" id="latencyTestPort" value="443" min="1" max="65535" style="width: 100%; padding: 10px; background: rgba(0, 0, 0, 0.8); border: 1px solid #D0BCFF; color: #D0BCFF; font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 13px;">
+                                    <label style="display: block; margin-bottom: 5px; color: #c8f135; font-size: 0.9rem;">${翻译值.latencyTestPort}</label>
+                                    <input type="number" id="latencyTestPort" value="443" min="1" max="65535" style="width: 100%; padding: 10px; background: rgba(0, 0, 0, 0.8); border: 1px solid #c8f135; color: #c8f135; font-family: 'Manrope', 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 13px;">
                                 </div>
                                 <div id="randomCountDiv" style="width: 100px; display: none;">
-                                    <label style="display: block; margin-bottom: 5px; color: #D0BCFF; font-size: 0.9rem;">${翻译值.randomCount}</label>
-                                    <input type="number" id="randomIPCount" value="20" min="1" max="100" style="width: 100%; padding: 10px; background: rgba(0, 0, 0, 0.8); border: 1px solid #D0BCFF; color: #D0BCFF; font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 13px;">
+                                    <label style="display: block; margin-bottom: 5px; color: #c8f135; font-size: 0.9rem;">${翻译值.randomCount}</label>
+                                    <input type="number" id="randomIPCount" value="20" min="1" max="100" style="width: 100%; padding: 10px; background: rgba(0, 0, 0, 0.8); border: 1px solid #c8f135; color: #c8f135; font-family: 'Manrope', 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 13px;">
                                 </div>
                                 <div style="width: 80px;">
-                                    <label style="display: block; margin-bottom: 5px; color: #D0BCFF; font-size: 0.9rem;">${是否值236 ? 'رشته‌ها' : '线程'}</label>
-                                    <input type="number" id="testThreads" value="5" min="1" max="50" style="width: 100%; padding: 10px; background: rgba(0, 0, 0, 0.8); border: 1px solid #D0BCFF; color: #D0BCFF; font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 13px;">
+                                    <label style="display: block; margin-bottom: 5px; color: #c8f135; font-size: 0.9rem;">${是否值236 ? 'رشته‌ها' : '线程'}</label>
+                                    <input type="number" id="testThreads" value="5" min="1" max="50" style="width: 100%; padding: 10px; background: rgba(0, 0, 0, 0.8); border: 1px solid #c8f135; color: #c8f135; font-family: 'Manrope', 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 13px;">
                                 </div>
                             </div>
                             <div id="manualInputDiv" style="margin-bottom: 10px;">
-                                <label style="display: block; margin-bottom: 5px; color: #D0BCFF; font-size: 0.9rem;">${翻译值.latencyTestIP}</label>
-                                <input type="text" id="latencyTestInput" placeholder="${翻译值.latencyTestIPPlaceholder}" style="width: 100%; padding: 10px; background: rgba(0, 0, 0, 0.8); border: 1px solid #D0BCFF; color: #D0BCFF; font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 13px;">
+                                <label style="display: block; margin-bottom: 5px; color: #c8f135; font-size: 0.9rem;">${翻译值.latencyTestIP}</label>
+                                <input type="text" id="latencyTestInput" placeholder="${翻译值.latencyTestIPPlaceholder}" style="width: 100%; padding: 10px; background: rgba(0, 0, 0, 0.8); border: 1px solid #c8f135; color: #c8f135; font-family: 'Manrope', 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 13px;">
                             </div>
                             <div id="urlFetchDiv" style="margin-bottom: 10px; display: none;">
-                                <label style="display: block; margin-bottom: 5px; color: #D0BCFF; font-size: 0.9rem;">${翻译值.fetchURL}</label>
+                                <label style="display: block; margin-bottom: 5px; color: #c8f135; font-size: 0.9rem;">${翻译值.fetchURL}</label>
                                 <div style="display: flex; gap: 8px;">
-                                    <input type="text" id="fetchURLInput" placeholder="${翻译值.fetchURLPlaceholder}" style="flex: 1; padding: 10px; background: rgba(0, 0, 0, 0.8); border: 1px solid #D0BCFF; color: #D0BCFF; font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 13px;">
-                                    <button type="button" id="fetchIPBtn" style="background: rgba(0, 200, 255, 0.2); border: 1px solid #00aaff; padding: 8px 16px; color: #00aaff; font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; cursor: pointer; white-space: nowrap;">⬇ ${翻译值.fetchIP}</button>
+                                    <input type="text" id="fetchURLInput" placeholder="${翻译值.fetchURLPlaceholder}" style="flex: 1; padding: 10px; background: rgba(0, 0, 0, 0.8); border: 1px solid #c8f135; color: #c8f135; font-family: 'Manrope', 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 13px;">
+                                    <button type="button" id="fetchIPBtn" style="background: rgba(200,241,53,0.2); border: 1px solid #5b8cff; padding: 8px 16px; color: #5b8cff; font-family: 'Manrope', 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; cursor: pointer; white-space: nowrap;">⬇ ${翻译值.fetchIP}</button>
                                 </div>
                             </div>
                             <div id="cfRandomDiv" style="margin-bottom: 10px; display: none;">
-                                <button type="button" id="generateCFIPBtn" style="background: rgba(0, 240, 255, 0.15); border: 1px solid #D0BCFF; padding: 10px 20px; color: #D0BCFF; font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; cursor: pointer; width: 100%; transition: all 0.3s;">🎲 ${翻译值.generateIP}</button>
+                                <button type="button" id="generateCFIPBtn" style="background: rgba(200,241,53,0.15); border: 1px solid #c8f135; padding: 10px 20px; color: #c8f135; font-family: 'Manrope', 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; cursor: pointer; width: 100%; transition: all 0.3s;">🎲 ${翻译值.generateIP}</button>
                             </div>
                             <div style="display: flex; gap: 10px; margin-bottom: 15px;">
-                                <button type="button" id="startLatencyTest" style="background: rgba(0, 240, 255, 0.2); border: 1px solid #D0BCFF; padding: 8px 16px; color: #D0BCFF; font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; cursor: pointer; transition: all 0.3s;">▶ ${翻译值.startTest}</button>
-                                <button type="button" id="stopLatencyTest" style="background: rgba(255, 0, 0, 0.2); border: 1px solid #F2B8B5; padding: 8px 16px; color: #F2B8B5; font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; cursor: pointer; display: none; transition: all 0.3s;">⏹ ${翻译值.stopTest}</button>
+                                <button type="button" id="startLatencyTest" style="background: rgba(200,241,53,0.2); border: 1px solid #c8f135; padding: 8px 16px; color: #c8f135; font-family: 'Manrope', 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; cursor: pointer; transition: all 0.3s;">▶ ${翻译值.startTest}</button>
+                                <button type="button" id="stopLatencyTest" style="background: rgba(255,93,115,0.2); border: 1px solid #ff5d73; padding: 8px 16px; color: #ff5d73; font-family: 'Manrope', 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; cursor: pointer; display: none; transition: all 0.3s;">⏹ ${翻译值.stopTest}</button>
                             </div>
-                            <div id="latencyTestStatus" style="color: #CAC4D0; font-size: 0.9rem; margin-bottom: 10px; display: none;"></div>
+                            <div id="latencyTestStatus" style="color: #9aa6b8; font-size: 0.9rem; margin-bottom: 10px; display: none;"></div>
                             <div id="latencyTestResults" style="max-height: 250px; overflow-y: auto; display: none;">
                                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-                                    <span style="color: #D0BCFF; font-weight: bold;">${翻译值.testResult}</span>
+                                    <span style="color: #c8f135; font-weight: bold;">${翻译值.testResult}</span>
                                     <div style="display: flex; gap: 8px;">
-                                        <button type="button" id="selectAllResults" style="background: transparent; border: 1px solid #CAC4D0; padding: 4px 10px; color: #CAC4D0; font-size: 0.8rem; cursor: pointer;">${翻译值.selectAll}</button>
-                                        <button type="button" id="deselectAllResults" style="background: transparent; border: 1px solid #CAC4D0; padding: 4px 10px; color: #CAC4D0; font-size: 0.8rem; cursor: pointer;">${翻译值.deselectAll}</button>
+                                        <button type="button" id="selectAllResults" style="background: transparent; border: 1px solid #9aa6b8; padding: 4px 10px; color: #9aa6b8; font-size: 0.8rem; cursor: pointer;">${翻译值.selectAll}</button>
+                                        <button type="button" id="deselectAllResults" style="background: transparent; border: 1px solid #9aa6b8; padding: 4px 10px; color: #9aa6b8; font-size: 0.8rem; cursor: pointer;">${翻译值.deselectAll}</button>
                                     </div>
                                 </div>
-                                <div id="cityFilterContainer" style="margin-bottom: 10px; padding: 10px; background: rgba(15, 3, 40, 0.6); border: 1px solid #CAC4D0; border-radius: 4px; display: none;">
+                                <div id="cityFilterContainer" style="margin-bottom: 10px; padding: 10px; background: rgba(11,14,20,0.6); border: 1px solid #9aa6b8; border-radius: 4px; display: none;">
                                     <div style="margin-bottom: 8px;">
-                                        <label style="display: inline-flex; align-items: center; cursor: pointer; color: #D0BCFF; font-size: 0.9rem;">
+                                        <label style="display: inline-flex; align-items: center; cursor: pointer; color: #c8f135; font-size: 0.9rem;">
                                             <input type="radio" name="cityFilterMode" value="all" checked style="margin-right: 6px; width: 16px; height: 16px; cursor: pointer;">
                                             <span>${是否值236 ? '全部城市' : '全部城市'}</span>
                                         </label>
-                                        <label style="display: inline-flex; align-items: center; cursor: pointer; color: #D0BCFF; font-size: 0.9rem; margin-left: 15px;">
+                                        <label style="display: inline-flex; align-items: center; cursor: pointer; color: #c8f135; font-size: 0.9rem; margin-left: 15px;">
                                             <input type="radio" name="cityFilterMode" value="fastest10" style="margin-right: 6px; width: 16px; height: 16px; cursor: pointer;">
                                             <span>${是否值236 ? '只选择最快的10个' : '只选择最快的10个'}</span>
                                         </label>
                                     </div>
                                     <div id="cityCheckboxesContainer" style="display: flex; flex-wrap: wrap; gap: 8px; max-height: 80px; overflow-y: auto; padding: 5px;"></div>
                                 </div>
-                                <div id="latencyResultsList" style="background: rgba(0, 0, 0, 0.5); border: 1px solid #004400; border-radius: 4px; padding: 10px;"></div>
+                                <div id="latencyResultsList" style="background: rgba(0, 0, 0, 0.5); border: 1px solid #0b1a08; border-radius: 4px; padding: 10px;"></div>
                                 <div style="margin-top: 10px; display: flex; gap: 10px;">
-                                    <button type="button" id="overwriteSelectedToYx" style="flex: 1; background: rgba(0, 220, 130, 0.3); border: 1px solid #D0BCFF; padding: 10px 20px; color: #D0BCFF; font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-weight: bold; cursor: pointer; transition: all 0.3s;">${是否值236 ? '覆盖添加' : '覆盖添加'}</button>
-                                    <button type="button" id="appendSelectedToYx" style="flex: 1; background: rgba(0, 178, 110, 0.3); border: 1px solid #CAC4D0; padding: 10px 20px; color: #CAC4D0; font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-weight: bold; cursor: pointer; transition: all 0.3s;">${是否值236 ? '追加添加' : '追加添加'}</button>
+                                    <button type="button" id="overwriteSelectedToYx" style="flex: 1; background: rgba(61,220,132,0.3); border: 1px solid #c8f135; padding: 10px 20px; color: #c8f135; font-family: 'Manrope', 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-weight: bold; cursor: pointer; transition: all 0.3s;">${是否值236 ? '覆盖添加' : '覆盖添加'}</button>
+                                    <button type="button" id="appendSelectedToYx" style="flex: 1; background: rgba(61,220,132,0.18); border: 1px solid #9aa6b8; padding: 10px 20px; color: #9aa6b8; font-family: 'Manrope', 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-weight: bold; cursor: pointer; transition: all 0.3s;">${是否值236 ? '追加添加' : '追加添加'}</button>
                                 </div>
                             </div>
                         </div>
 
                         <div style="margin-bottom: 15px;">
-                                <label style="display: block; margin-bottom: 8px; color: #D0BCFF; font-weight: bold; ">${翻译值.socks5Config}</label>
-                                <input type="text" id="socksConfig" placeholder="${是否值236 ? 'مثال: user:pass@host:port یا host:port' : '例如: user:pass@host:port 或 host:port'}" style="width: 100%; padding: 12px; background: rgba(0, 0, 0, 0.8); border: 2px solid #D0BCFF; color: #D0BCFF; font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 14px;">
-                                <small style="color: #CAC4D0; font-size: 0.85rem;">${是否值236 ? 解码64('2KLYr9ix2LMg2b7YsdmI2qnYs9uMIFNPQ0tTNdiMINio2LHYp9uMINin2YbYqtmC2KfZhCDYqtmF2KfZhSDYqtix2KfZgduM2qkg2K7YsdmI2KzbjCDYp9iz2KrZgdin2K/ZhyDZhduM4oCM2LTZiNiv') : 解码64('U09DS1M15Luj55CG5Zyw5Z2A77yM55So5LqO6L2s5Y+R5omA5pyJ5Ye656uZ5rWB6YeP')}</small>
+                                <label style="display: block; margin-bottom: 8px; color: #c8f135; font-weight: bold; ">${翻译值.socks5Config}</label>
+                                <input type="text" id="socksConfig" placeholder="${是否值236 ? 'مثال: user:pass@host:port یا host:port' : '例如: user:pass@host:port 或 host:port'}" style="width: 100%; padding: 12px; background: rgba(0, 0, 0, 0.8); border: 2px solid #c8f135; color: #c8f135; font-family: 'Manrope', 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 14px;">
+                                <small style="color: #9aa6b8; font-size: 0.85rem;">${是否值236 ? 解码64('2KLYr9ix2LMg2b7YsdmI2qnYs9uMIFNPQ0tTNdiMINio2LHYp9uMINin2YbYqtmC2KfZhCDYqtmF2KfZhSDYqtix2KfZgduM2qkg2K7YsdmI2KzbjCDYp9iz2KrZgdin2K/ZhyDZhduM4oCM2LTZiNiv') : 解码64('U09DS1M15Luj55CG5Zyw5Z2A77yM55So5LqO6L2s5Y+R5omA5pyJ5Ye656uZ5rWB6YeP')}</small>
                         </div>
                     </form>
 
-                    <h3 style="color: #D0BCFF; margin: 20px 0 15px 0; font-size: 1.2rem;">${翻译值.advancedControl}</h3>
+                    <h3 style="color: #c8f135; margin: 20px 0 15px 0; font-size: 1.2rem;">${翻译值.advancedControl}</h3>
                     <form id="advancedConfigForm" style="margin-bottom: 20px;">
                         <div style="margin-bottom: 15px;">
-                                <label style="display: block; margin-bottom: 8px; color: #D0BCFF; font-weight: bold; ">${翻译值.subscriptionConverter}</label>
-                                <input type="text" id="scu" placeholder="${翻译值.subscriptionConverterPlaceholder}" style="width: 100%; padding: 12px; background: rgba(0, 0, 0, 0.8); border: 2px solid #D0BCFF; color: #D0BCFF; font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 14px;">
-                                <small style="color: #CAC4D0; font-size: 0.85rem;">${翻译值.subscriptionConverterHint}</small>
+                                <label style="display: block; margin-bottom: 8px; color: #c8f135; font-weight: bold; ">${翻译值.subscriptionConverter}</label>
+                                <input type="text" id="scu" placeholder="${翻译值.subscriptionConverterPlaceholder}" style="width: 100%; padding: 12px; background: rgba(0, 0, 0, 0.8); border: 2px solid #c8f135; color: #c8f135; font-family: 'Manrope', 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 14px;">
+                                <small style="color: #9aa6b8; font-size: 0.85rem;">${翻译值.subscriptionConverterHint}</small>
                         </div>
                         <div style="margin-bottom: 15px;">
-                                <label style="display: block; margin-bottom: 8px; color: #D0BCFF; font-weight: bold; ">${翻译值.builtinPreferred}</label>
-                            <div style="padding: 15px; background: rgba(15, 3, 40, 0.6); border: 1px solid #D0BCFF; border-radius: 5px;">
+                                <label style="display: block; margin-bottom: 8px; color: #c8f135; font-weight: bold; ">${翻译值.builtinPreferred}</label>
+                            <div style="padding: 15px; background: rgba(11,14,20,0.6); border: 1px solid #c8f135; border-radius: 5px;">
                                 <div style="margin-bottom: 10px;">
-                                    <label style="display: inline-flex; align-items: center; cursor: pointer; color: #D0BCFF;">
+                                    <label style="display: inline-flex; align-items: center; cursor: pointer; color: #c8f135;">
                                         <input type="checkbox" id="ena" style="margin-right: 8px; width: 18px; height: 18px; cursor: pointer;">
                                             <span style="font-size: 1.1rem;">${翻译值.enableNativeAddress}</span>
                                     </label>
                                 </div>
                                 <div style="margin-bottom: 10px;">
-                                    <label style="display: inline-flex; align-items: center; cursor: pointer; color: #D0BCFF;">
+                                    <label style="display: inline-flex; align-items: center; cursor: pointer; color: #c8f135;">
                                         <input type="checkbox" id="epd" checked style="margin-right: 8px; width: 18px; height: 18px; cursor: pointer;">
                                             <span style="font-size: 1.1rem;">${翻译值.enablePreferredDomain}</span>
                                     </label>
                                 </div>
                                 <div style="margin-bottom: 10px;">
-                                    <label style="display: inline-flex; align-items: center; cursor: pointer; color: #D0BCFF;">
+                                    <label style="display: inline-flex; align-items: center; cursor: pointer; color: #c8f135;">
                                         <input type="checkbox" id="epi" checked style="margin-right: 8px; width: 18px; height: 18px; cursor: pointer;">
                                             <span style="font-size: 1.1rem;">${翻译值.enablePreferredIP}</span>
                                     </label>
                                 </div>
                                 <div style="margin-bottom: 10px;">
-                                    <label style="display: inline-flex; align-items: center; cursor: pointer; color: #D0BCFF;">
+                                    <label style="display: inline-flex; align-items: center; cursor: pointer; color: #c8f135;">
                                         <input type="checkbox" id="egi" checked style="margin-right: 8px; width: 18px; height: 18px; cursor: pointer;">
                                             <span style="font-size: 1.1rem;">${翻译值.enableGitHubPreferred}</span>
                                     </label>
                                 </div>
-                                    <small style="color: #CAC4D0; font-size: 0.85rem; display: block; margin-top: 10px;">${翻译值.builtinPreferredHint}</small>
+                                    <small style="color: #9aa6b8; font-size: 0.85rem; display: block; margin-top: 10px;">${翻译值.builtinPreferredHint}</small>
                             </div>
                         </div>
                         <div style="margin-bottom: 15px;">
-                                <label style="display: block; margin-bottom: 8px; color: #D0BCFF; font-weight: bold; ">优选IP筛选设置</label>
-                            <div style="padding: 15px; background: rgba(15, 3, 40, 0.6); border: 1px solid #D0BCFF; border-radius: 5px;">
+                                <label style="display: block; margin-bottom: 8px; color: #c8f135; font-weight: bold; ">优选IP筛选设置</label>
+                            <div style="padding: 15px; background: rgba(11,14,20,0.6); border: 1px solid #c8f135; border-radius: 5px;">
                                 <div style="margin-bottom: 15px;">
-                                    <label style="display: block; margin-bottom: 8px; color: #D0BCFF; font-weight: bold; ">IP版本选择</label>
+                                    <label style="display: block; margin-bottom: 8px; color: #c8f135; font-weight: bold; ">IP版本选择</label>
                                     <div style="display: flex; gap: 20px; flex-wrap: wrap;">
-                                        <label style="display: inline-flex; align-items: center; cursor: pointer; color: #D0BCFF;">
+                                        <label style="display: inline-flex; align-items: center; cursor: pointer; color: #c8f135;">
                                             <input type="checkbox" id="ipv4Enabled" checked style="margin-right: 8px; width: 18px; height: 18px; cursor: pointer;">
                                             <span style="font-size: 1rem;">IPv4</span>
                                         </label>
-                                        <label style="display: inline-flex; align-items: center; cursor: pointer; color: #D0BCFF;">
+                                        <label style="display: inline-flex; align-items: center; cursor: pointer; color: #c8f135;">
                                             <input type="checkbox" id="ipv6Enabled" checked style="margin-right: 8px; width: 18px; height: 18px; cursor: pointer;">
                                             <span style="font-size: 1rem;">IPv6</span>
                                         </label>
                                     </div>
                                 </div>
                                 <div style="margin-bottom: 10px;">
-                                    <label style="display: block; margin-bottom: 8px; color: #D0BCFF; font-weight: bold; ">运营商选择</label>
+                                    <label style="display: block; margin-bottom: 8px; color: #c8f135; font-weight: bold; ">运营商选择</label>
                                     <div style="display: flex; gap: 20px; flex-wrap: wrap;">
-                                        <label style="display: inline-flex; align-items: center; cursor: pointer; color: #D0BCFF;">
+                                        <label style="display: inline-flex; align-items: center; cursor: pointer; color: #c8f135;">
                                             <input type="checkbox" id="ispMobile" checked style="margin-right: 8px; width: 18px; height: 18px; cursor: pointer;">
                                             <span style="font-size: 1rem;">移动</span>
                                         </label>
-                                        <label style="display: inline-flex; align-items: center; cursor: pointer; color: #D0BCFF;">
+                                        <label style="display: inline-flex; align-items: center; cursor: pointer; color: #c8f135;">
                                             <input type="checkbox" id="ispUnicom" checked style="margin-right: 8px; width: 18px; height: 18px; cursor: pointer;">
                                             <span style="font-size: 1rem;">联通</span>
                                         </label>
-                                        <label style="display: inline-flex; align-items: center; cursor: pointer; color: #D0BCFF;">
+                                        <label style="display: inline-flex; align-items: center; cursor: pointer; color: #c8f135;">
                                             <input type="checkbox" id="ispTelecom" checked style="margin-right: 8px; width: 18px; height: 18px; cursor: pointer;">
                                             <span style="font-size: 1rem;">电信</span>
                                         </label>
                                     </div>
                                 </div>
-                                    <small style="color: #CAC4D0; font-size: 0.85rem; display: block; margin-top: 10px;">选择要使用的IP版本和运营商，未选中的将被过滤</small>
+                                    <small style="color: #9aa6b8; font-size: 0.85rem; display: block; margin-top: 10px;">选择要使用的IP版本和运营商，未选中的将被过滤</small>
                             </div>
                         </div>
                         <div style="margin-bottom: 15px;">
-                                <label style="display: block; margin-bottom: 8px; color: #D0BCFF; font-weight: bold; ">${翻译值.allowAPIManagement}</label>
-                            <select id="apiEnabled" style="width: 100%; padding: 12px; background: rgba(0, 0, 0, 0.8); border: 2px solid #D0BCFF; color: #D0BCFF; font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 14px;">
+                                <label style="display: block; margin-bottom: 8px; color: #c8f135; font-weight: bold; ">${翻译值.allowAPIManagement}</label>
+                            <select id="apiEnabled" style="width: 100%; padding: 12px; background: rgba(0, 0, 0, 0.8); border: 2px solid #c8f135; color: #c8f135; font-family: 'Manrope', 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 14px;">
                                     <option value="">${翻译值.apiEnabledDefault}</option>
                                     <option value="yes">${翻译值.apiEnabledYes}</option>
                             </select>
-                                <small style="color: #FDD663; font-size: 0.85rem;">${翻译值.apiEnabledHint}</small>
+                                <small style="color: #ffb454; font-size: 0.85rem;">${翻译值.apiEnabledHint}</small>
                         </div>
                         <div style="margin-bottom: 15px;">
-                                <label style="display: block; margin-bottom: 8px; color: #D0BCFF; font-weight: bold; ">${翻译值.regionMatching}</label>
-                            <select id="regionMatching" style="width: 100%; padding: 12px; background: rgba(0, 0, 0, 0.8); border: 2px solid #D0BCFF; color: #D0BCFF; font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 14px;">
+                                <label style="display: block; margin-bottom: 8px; color: #c8f135; font-weight: bold; ">${翻译值.regionMatching}</label>
+                            <select id="regionMatching" style="width: 100%; padding: 12px; background: rgba(0, 0, 0, 0.8); border: 2px solid #c8f135; color: #c8f135; font-family: 'Manrope', 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 14px;">
                                     <option value="">${翻译值.regionMatchingDefault}</option>
                                     <option value="no">${翻译值.regionMatchingNo}</option>
                             </select>
-                                <small style="color: #CAC4D0; font-size: 0.85rem;">${翻译值.regionMatchingHint}</small>
+                                <small style="color: #9aa6b8; font-size: 0.85rem;">${翻译值.regionMatchingHint}</small>
                         </div>
                         <div style="margin-bottom: 15px;">
-                                <label style="display: block; margin-bottom: 8px; color: #D0BCFF; font-weight: bold; ">${翻译值.downgradeControl}</label>
-                            <select id="downgradeControl" style="width: 100%; padding: 12px; background: rgba(0, 0, 0, 0.8); border: 2px solid #D0BCFF; color: #D0BCFF; font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 14px;">
+                                <label style="display: block; margin-bottom: 8px; color: #c8f135; font-weight: bold; ">${翻译值.downgradeControl}</label>
+                            <select id="downgradeControl" style="width: 100%; padding: 12px; background: rgba(0, 0, 0, 0.8); border: 2px solid #c8f135; color: #c8f135; font-family: 'Manrope', 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 14px;">
                                     <option value="">${翻译值.downgradeControlDefault}</option>
                                     <option value="no">${翻译值.downgradeControlNo}</option>
                             </select>
-                                <small style="color: #CAC4D0; font-size: 0.85rem;">${翻译值.downgradeControlHint}</small>
+                                <small style="color: #9aa6b8; font-size: 0.85rem;">${翻译值.downgradeControlHint}</small>
                         </div>
                         <div style="margin-bottom: 15px;">
-                                <label style="display: block; margin-bottom: 8px; color: #D0BCFF; font-weight: bold; ">${翻译值.tlsControl}</label>
-                            <select id="portControl" style="width: 100%; padding: 12px; background: rgba(0, 0, 0, 0.8); border: 2px solid #D0BCFF; color: #D0BCFF; font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 14px;">
+                                <label style="display: block; margin-bottom: 8px; color: #c8f135; font-weight: bold; ">${翻译值.tlsControl}</label>
+                            <select id="portControl" style="width: 100%; padding: 12px; background: rgba(0, 0, 0, 0.8); border: 2px solid #c8f135; color: #c8f135; font-family: 'Manrope', 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 14px;">
                                     <option value="">${翻译值.tlsControlDefault}</option>
                                     <option value="yes">${翻译值.tlsControlYes}</option>
                             </select>
-                                <small style="color: #CAC4D0; font-size: 0.85rem;">${翻译值.tlsControlHint}</small>
+                                <small style="color: #9aa6b8; font-size: 0.85rem;">${翻译值.tlsControlHint}</small>
                         </div>
                         <div style="margin-bottom: 15px;">
-                                <label style="display: block; margin-bottom: 8px; color: #D0BCFF; font-weight: bold; ">${翻译值.preferredControl}</label>
-                            <select id="preferredControl" style="width: 100%; padding: 12px; background: rgba(0, 0, 0, 0.8); border: 2px solid #D0BCFF; color: #D0BCFF; font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 14px;">
+                                <label style="display: block; margin-bottom: 8px; color: #c8f135; font-weight: bold; ">${翻译值.preferredControl}</label>
+                            <select id="preferredControl" style="width: 100%; padding: 12px; background: rgba(0, 0, 0, 0.8); border: 2px solid #c8f135; color: #c8f135; font-family: 'Manrope', 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 14px;">
                                     <option value="">${翻译值.preferredControlDefault}</option>
                                     <option value="yes">${翻译值.preferredControlYes}</option>
                             </select>
-                                <small style="color: #CAC4D0; font-size: 0.85rem;">${翻译值.preferredControlHint}</small>
+                                <small style="color: #9aa6b8; font-size: 0.85rem;">${翻译值.preferredControlHint}</small>
                         </div>
                     </form>
-                    <div id="currentConfig" style="background: rgba(0, 0, 0, 0.9); border: 1px solid #D0BCFF; padding: 15px; margin: 10px 0; font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #D0BCFF;">
+                    <div id="currentConfig" style="background: rgba(0, 0, 0, 0.9); border: 1px solid #c8f135; padding: 15px; margin: 10px 0; font-family: 'Manrope', 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #c8f135;">
                             ${翻译值.loading}
                     </div>
-                    <div id="pathTypeInfo" style="background: rgba(15, 3, 40, 0.7); border: 1px solid #D0BCFF; padding: 15px; margin: 10px 0; font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #D0BCFF;">
-                            <div style="font-weight: bold; margin-bottom: 8px; color: #81C995; ">${翻译值.currentConfig}</div>
+                    <div id="pathTypeInfo" style="background: rgba(11,14,20,0.7); border: 1px solid #c8f135; padding: 15px; margin: 10px 0; font-family: 'Manrope', 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #c8f135;">
+                            <div style="font-weight: bold; margin-bottom: 8px; color: #3ddc84; ">${翻译值.currentConfig}</div>
                             <div id="pathTypeStatus">${翻译值.checking}</div>
                     </div>
                 </div>
-                <div id="statusMessage" style="display: none; padding: 10px; margin: 10px 0; border: 1px solid #D0BCFF; background: rgba(8, 4, 28, 0.8); color: #D0BCFF; "></div>
+                <div id="statusMessage" style="display: none; padding: 10px; margin: 10px 0; border: 1px solid #c8f135; background: rgba(8,10,14,0.8); color: #c8f135; "></div>
             </div>
             
             <div class="card">
                     <h2 class="card-title">${翻译值.relatedLinks}</h2>
                 <div style="text-align: center; margin: 20px 0;">
-                        <a href="https://github.com/byJoey/cfnew" target="_blank" style="color: #D0BCFF; text-decoration: none; margin: 0 20px; font-size: 1.2rem; ">${翻译值.githubProject}</a>
-                        <a href="https://github.com/byJoey/yx-tools/releases/" target="_blank" rel="noopener noreferrer" style="color: #D0BCFF; text-decoration: none; margin: 0 20px; font-size: 1.2rem; ">${翻译值.优选工具}</a>
-                    <a href="https://www.youtube.com/@joeyblog" target="_blank" style="color: #D0BCFF; text-decoration: none; margin: 0 20px; font-size: 1.2rem; ">YouTube @joeyblog</a>
+                        <a href="https://github.com/byJoey/cfnew" target="_blank" style="color: #c8f135; text-decoration: none; margin: 0 20px; font-size: 1.2rem; ">${翻译值.githubProject}</a>
+                        <a href="https://github.com/byJoey/yx-tools/releases/" target="_blank" rel="noopener noreferrer" style="color: #c8f135; text-decoration: none; margin: 0 20px; font-size: 1.2rem; ">${翻译值.优选工具}</a>
+                    <a href="https://www.youtube.com/@joeyblog" target="_blank" style="color: #c8f135; text-decoration: none; margin: 0 20px; font-size: 1.2rem; ">YouTube @joeyblog</a>
                 </div>
             </div>
         </div>
@@ -5448,7 +5448,7 @@ function 创建矩阵雨() {
   const 矩阵值 = document.getElementById('matrixCodeRain');
   if (!矩阵值) return;
   const 赛博字符列表 = '01アイウエオカキクケコサシスセソタチツテトナニヌネノ$%#@!?<>+=ABCDEF';
-  const 调色板 = ['#D0BCFF', '#EFB8C8', '#9A82DB', '#81C995'];
+  const 调色板 = ['#c8f135', '#5b8cff', '#ffb454', '#3ddc84'];
   const 列数 = Math.floor(window.innerWidth / 20);
   for (let 索引值20184 = 0; 索引值20184 < 列数; 索引值20184++) {
     const 列20183 = document.createElement('div');
@@ -5478,7 +5478,7 @@ function 创建矩阵雨() {
           const 目标20181 = 字符列表[Math.floor(Math.random() * 字符列表.length)];
           const 本地值20180 = 目标20181.style.color;
           目标20181.style.color = '#ffffff';
-          目标20181.style.textShadow = '0 0 10px #ffffff, 0 0 18px #D0BCFF';
+          目标20181.style.textShadow = '0 0 10px #ffffff, 0 0 18px #c8f135';
           setTimeout(function () {
             目标20181.style.color = 本地值20180;
             目标20181.style.textShadow = '';
@@ -5593,43 +5593,43 @@ async function 检查系统状态() {
 
         // 获取自定义IP的详细信息
         const 自定义地址值 = 数据20167.ci || 翻译值20170.unknown;
-        值值20179.innerHTML = 翻译值20170.detectionMethod + '<span style="color: #FDD663;">⚙️ ' + 翻译值20170.customIPMode + '</span>';
-        地区状态.innerHTML = 翻译值20170.workerRegion + '<span style="color: #FDD663;">🔧 ' + 翻译值20170.customIPModeDesc + '</span>';
+        值值20179.innerHTML = 翻译值20170.detectionMethod + '<span style="color: #ffb454;">⚙️ ' + 翻译值20170.customIPMode + '</span>';
+        地区状态.innerHTML = 翻译值20170.workerRegion + '<span style="color: #ffb454;">🔧 ' + 翻译值20170.customIPModeDesc + '</span>';
 
         // 显示自定义IP配置状态，包含具体IP
-        if (备用状态) 备用状态.innerHTML = 翻译值20170.proxyIPStatus + '<span style="color: #FDD663;">🔧 ' + 翻译值20170.usingCustomProxyIP + 自定义地址值 + '</span>';
-        if (当前地址) 当前地址.innerHTML = 翻译值20170.currentIP + '<span style="color: #FDD663;">✅ ' + 自定义地址值 + 翻译值20170.customIPConfig + '</span>';
-        if (地区值) 地区值.innerHTML = 翻译值20170.regionMatch + '<span style="color: #FDD663;">⚠️ ' + 翻译值20170.customIPModeDisabled + '</span>';
+        if (备用状态) 备用状态.innerHTML = 翻译值20170.proxyIPStatus + '<span style="color: #ffb454;">🔧 ' + 翻译值20170.usingCustomProxyIP + 自定义地址值 + '</span>';
+        if (当前地址) 当前地址.innerHTML = 翻译值20170.currentIP + '<span style="color: #ffb454;">✅ ' + 自定义地址值 + 翻译值20170.customIPConfig + '</span>';
+        if (地区值) 地区值.innerHTML = 翻译值20170.regionMatch + '<span style="color: #ffb454;">⚠️ ' + 翻译值20170.customIPModeDisabled + '</span>';
         return; // 提前返回，不执行后续的地区匹配逻辑
       } else if (数据20167.detectionMethod === '手动指定地区' || 数据20167.detectionMethod === 'تعیین منطقه دستی') {
         是否手动地区值 = true;
         值地区20169 = 数据20167.region;
-        值值20179.innerHTML = 翻译值20170.detectionMethod + '<span style="color: #00b380;">' + 翻译值20170.manualRegion + '</span>';
-        地区状态.innerHTML = 翻译值20170.workerRegion + '<span style="color: #81C995;">🎯 ' + 翻译值20170.regionNames[值地区20169] + 翻译值20170.manualRegionDesc + '</span>';
+        值值20179.innerHTML = 翻译值20170.detectionMethod + '<span style="color: #3ddc84;">' + 翻译值20170.manualRegion + '</span>';
+        地区状态.innerHTML = 翻译值20170.workerRegion + '<span style="color: #3ddc84;">🎯 ' + 翻译值20170.regionNames[值地区20169] + 翻译值20170.manualRegionDesc + '</span>';
 
         // 显示配置状态而不是检测状态
-        if (备用状态) 备用状态.innerHTML = 翻译值20170.proxyIPStatus + '<span style="color: #81C995;">✅ ' + 翻译值20170.proxyIPAvailable + '</span>';
-        if (当前地址) 当前地址.innerHTML = 翻译值20170.currentIP + '<span style="color: #81C995;">✅ ' + 翻译值20170.smartSelection + '</span>';
-        if (地区值) 地区值.innerHTML = 翻译值20170.regionMatch + '<span style="color: #81C995;">✅ ' + 翻译值20170.sameRegionIP + '</span>';
+        if (备用状态) 备用状态.innerHTML = 翻译值20170.proxyIPStatus + '<span style="color: #3ddc84;">✅ ' + 翻译值20170.proxyIPAvailable + '</span>';
+        if (当前地址) 当前地址.innerHTML = 翻译值20170.currentIP + '<span style="color: #3ddc84;">✅ ' + 翻译值20170.smartSelection + '</span>';
+        if (地区值) 地区值.innerHTML = 翻译值20170.regionMatch + '<span style="color: #3ddc84;">✅ ' + 翻译值20170.sameRegionIP + '</span>';
         return; // 提前返回，不执行后续的地区匹配逻辑
       } else if (数据20167.region && 翻译值20170.regionNames[数据20167.region]) {
         值地区20169 = 数据20167.region;
       }
-      值值20179.innerHTML = 翻译值20170.detectionMethod + '<span style="color: #81C995;">' + 翻译值20170.cloudflareDetection + '</span>';
+      值值20179.innerHTML = 翻译值20170.detectionMethod + '<span style="color: #3ddc84;">' + 翻译值20170.cloudflareDetection + '</span>';
     } catch (事件值20166) {
-      值值20179.innerHTML = 翻译值20170.detectionMethod + '<span style="color: #F2B8B5;">' + 翻译值20170.detectionFailed + '</span>';
+      值值20179.innerHTML = 翻译值20170.detectionMethod + '<span style="color: #ff5d73;">' + 翻译值20170.detectionFailed + '</span>';
     }
-    地区状态.innerHTML = 翻译值20170.workerRegion + '<span style="color: #81C995;">✅ ' + 翻译值20170.regionNames[值地区20169] + '</span>';
+    地区状态.innerHTML = 翻译值20170.workerRegion + '<span style="color: #3ddc84;">✅ ' + 翻译值20170.regionNames[值地区20169] + '</span>';
 
     // 直接显示配置状态，不再进行检测
     if (备用状态) {
-      备用状态.innerHTML = 翻译值20170.proxyIPStatus + '<span style="color: #81C995;">✅ ' + 翻译值20170.proxyIPAvailable + '</span>';
+      备用状态.innerHTML = 翻译值20170.proxyIPStatus + '<span style="color: #3ddc84;">✅ ' + 翻译值20170.proxyIPAvailable + '</span>';
     }
     if (当前地址) {
-      当前地址.innerHTML = 翻译值20170.currentIP + '<span style="color: #81C995;">✅ ' + 翻译值20170.smartSelection + '</span>';
+      当前地址.innerHTML = 翻译值20170.currentIP + '<span style="color: #3ddc84;">✅ ' + 翻译值20170.smartSelection + '</span>';
     }
     if (地区值) {
-      地区值.innerHTML = 翻译值20170.regionMatch + '<span style="color: #81C995;">✅ ' + 翻译值20170.sameRegionIP + '</span>';
+      地区值.innerHTML = 翻译值20170.regionMatch + '<span style="color: #3ddc84;">✅ ' + 翻译值20170.sameRegionIP + '</span>';
     }
   } catch (错误20165) {
     function 获取凭据20164(名称20163) {
@@ -5665,11 +5665,11 @@ async function 检查系统状态() {
       }
     };
     const 翻译值20156 = 本地值20157[是否值20158 ? 'fa' : 'zh'];
-    document.getElementById('regionStatus').innerHTML = 翻译值20156.workerRegion + '<span style="color: #F2B8B5;">❌ ' + 翻译值20156.detectionFailed + '</span>';
-    document.getElementById('geoInfo').innerHTML = 翻译值20156.detectionMethod + '<span style="color: #F2B8B5;">❌ ' + 翻译值20156.detectionFailed + '</span>';
-    document.getElementById('backupStatus').innerHTML = 翻译值20156.proxyIPStatus + '<span style="color: #F2B8B5;">❌ ' + 翻译值20156.detectionFailed + '</span>';
-    document.getElementById('currentIP').innerHTML = 翻译值20156.currentIP + '<span style="color: #F2B8B5;">❌ ' + 翻译值20156.detectionFailed + '</span>';
-    document.getElementById('regionMatch').innerHTML = 翻译值20156.regionMatch + '<span style="color: #F2B8B5;">❌ ' + 翻译值20156.detectionFailed + '</span>';
+    document.getElementById('regionStatus').innerHTML = 翻译值20156.workerRegion + '<span style="color: #ff5d73;">❌ ' + 翻译值20156.detectionFailed + '</span>';
+    document.getElementById('geoInfo').innerHTML = 翻译值20156.detectionMethod + '<span style="color: #ff5d73;">❌ ' + 翻译值20156.detectionFailed + '</span>';
+    document.getElementById('backupStatus').innerHTML = 翻译值20156.proxyIPStatus + '<span style="color: #ff5d73;">❌ ' + 翻译值20156.detectionFailed + '</span>';
+    document.getElementById('currentIP').innerHTML = 翻译值20156.currentIP + '<span style="color: #ff5d73;">❌ ' + 翻译值20156.detectionFailed + '</span>';
+    document.getElementById('regionMatch').innerHTML = 翻译值20156.regionMatch + '<span style="color: #ff5d73;">❌ ' + 翻译值20156.detectionFailed + '</span>';
   }
 }
 async function 测试接口() {
@@ -5790,7 +5790,7 @@ async function 检查键值状态() {
     const 翻译值20124 = 本地值20125[是否值20126 ? 'fa' : 'zh'];
     if (响应20133.status === 503) {
       // KV未配置
-      document.getElementById('kvStatus').innerHTML = '<span style="color: #FDD663;">' + 翻译值20124.kvDisabled + '</span>';
+      document.getElementById('kvStatus').innerHTML = '<span style="color: #ffb454;">' + 翻译值20124.kvDisabled + '</span>';
       document.getElementById('configCard').style.display = 'block';
       document.getElementById('currentConfig').textContent = 翻译值20124.kvNotConfigured;
     } else if (响应20133.ok) {
@@ -5799,22 +5799,22 @@ async function 检查键值状态() {
 
         // 检查响应是否包含KV配置信息
         if (数据20123 && 数据20123.kvEnabled === true) {
-          document.getElementById('kvStatus').innerHTML = '<span style="color: #81C995;">' + 翻译值20124.kvEnabled + '</span>';
+          document.getElementById('kvStatus').innerHTML = '<span style="color: #3ddc84;">' + 翻译值20124.kvEnabled + '</span>';
           document.getElementById('configContent').style.display = 'block';
           document.getElementById('configCard').style.display = 'block';
           await 加载当前配置();
         } else {
-          document.getElementById('kvStatus').innerHTML = '<span style="color: #FDD663;">' + 翻译值20124.kvDisabled + '</span>';
+          document.getElementById('kvStatus').innerHTML = '<span style="color: #ffb454;">' + 翻译值20124.kvDisabled + '</span>';
           document.getElementById('configCard').style.display = 'block';
           document.getElementById('currentConfig').textContent = 翻译值20124.kvNotEnabled;
         }
       } catch (数据对象错误) {
-        document.getElementById('kvStatus').innerHTML = '<span style="color: #FDD663;">' + 翻译值20124.kvCheckFailed + '</span>';
+        document.getElementById('kvStatus').innerHTML = '<span style="color: #ffb454;">' + 翻译值20124.kvCheckFailed + '</span>';
         document.getElementById('configCard').style.display = 'block';
         document.getElementById('currentConfig').textContent = 翻译值20124.kvCheckFailedFormat;
       }
     } else {
-      document.getElementById('kvStatus').innerHTML = '<span style="color: #FDD663;">' + 翻译值20124.kvDisabled + '</span>';
+      document.getElementById('kvStatus').innerHTML = '<span style="color: #ffb454;">' + 翻译值20124.kvDisabled + '</span>';
       document.getElementById('configCard').style.display = 'block';
       document.getElementById('currentConfig').textContent = 翻译值20124.kvCheckFailedStatus + 响应20133.status;
     }
@@ -5844,7 +5844,7 @@ async function 检查键值状态() {
       }
     };
     const 翻译值20118 = 本地值20119[是否值 ? 'fa' : 'zh'];
-    document.getElementById('kvStatus').innerHTML = '<span style="color: #FDD663;">' + 翻译值20118.kvDisabled + '</span>';
+    document.getElementById('kvStatus').innerHTML = '<span style="color: #ffb454;">' + 翻译值20118.kvDisabled + '</span>';
     document.getElementById('configCard').style.display = 'block';
     document.getElementById('currentConfig').textContent = 翻译值20118.kvCheckFailedError + 错误20122.message;
   }
@@ -6023,10 +6023,10 @@ function 更新路径类型状态(自定义路径) {
   const 当前路径 = 路径部分列表.length > 0 ? 路径部分列表[0] : '';
   if (自定义路径 && 自定义路径.trim()) {
     // 使用自定义路径 (d)
-    路径类型状态.innerHTML = '<div style="color: #81C995;">使用类型: <strong>自定义路径 (d)</strong></div>' + '<div style="margin-top: 5px; color: #D0BCFF;">当前路径: <span style="color: #FDD663;">' + 自定义路径 + '</span></div>' + '<div style="margin-top: 5px; font-size: 0.9rem; color: #CAC4D0;">访问地址: ' + (当前网址20110.split('/')[0] + '//' + 当前网址20110.split('/')[2]) + 自定义路径 + '/sub</div>';
+    路径类型状态.innerHTML = '<div style="color: #3ddc84;">使用类型: <strong>自定义路径 (d)</strong></div>' + '<div style="margin-top: 5px; color: #c8f135;">当前路径: <span style="color: #ffb454;">' + 自定义路径 + '</span></div>' + '<div style="margin-top: 5px; font-size: 0.9rem; color: #9aa6b8;">访问地址: ' + (当前网址20110.split('/')[0] + '//' + 当前网址20110.split('/')[2]) + 自定义路径 + '/sub</div>';
   } else {
     // 使用 UUID (u)
-    路径类型状态.innerHTML = '<div style="color: #81C995;">使用类型: <strong>UUID 路径 (u)</strong></div>' + '<div style="margin-top: 5px; color: #D0BCFF;">当前路径: <span style="color: #FDD663;">' + (当前路径 || '(UUID)') + '</span></div>' + '<div style="margin-top: 5px; font-size: 0.9rem; color: #CAC4D0;">访问地址: ' + 当前网址20110.split('/sub')[0] + '/sub</div>';
+    路径类型状态.innerHTML = '<div style="color: #3ddc84;">使用类型: <strong>UUID 路径 (u)</strong></div>' + '<div style="margin-top: 5px; color: #c8f135;">当前路径: <span style="color: #ffb454;">' + (当前路径 || '(UUID)') + '</span></div>' + '<div style="margin-top: 5px; font-size: 0.9rem; color: #9aa6b8;">访问地址: ' + 当前网址20110.split('/sub')[0] + '/sub</div>';
   }
 }
 
@@ -6047,7 +6047,7 @@ function 更新工作器地区状态() {
       // 显示提示信息
       if (值地区值) {
         值地区值.style.display = 'block';
-        值地区值.style.color = '#FDD663';
+        值地区值.style.color = '#ffb454';
       }
     } else {
       值地区.style.opacity = '1';
@@ -6107,8 +6107,8 @@ function 显示状态(消息20100, 类型20099) {
   if (状态值) {
     状态值.textContent = 消息20100;
     状态值.style.display = 'block';
-    状态值.style.color = 类型20099 === 'success' ? '#D0BCFF' : '#F2B8B5';
-    状态值.style.borderColor = 类型20099 === 'success' ? '#D0BCFF' : '#F2B8B5';
+    状态值.style.color = 类型20099 === 'success' ? '#c8f135' : '#ff5d73';
+    状态值.style.borderColor = 类型20099 === 'success' ? '#c8f135' : '#ff5d73';
     setTimeout(function () {
       状态值.style.display = 'none';
     }, 3000);
@@ -6197,7 +6197,7 @@ async function 检查加密问候状态() {
   try {
     const 当前网址 = window.location.href;
     const 订阅网址 = 当前网址 + '/sub';
-    加密客户端问候状态值.innerHTML = 'ECH状态: <span style="color: #FDD663;">检测中...</span>';
+    加密客户端问候状态值.innerHTML = 'ECH状态: <span style="color: #ffb454;">检测中...</span>';
     const 响应20095 = await fetch(订阅网址, {
       method: 'GET',
       headers: {
@@ -6207,12 +6207,12 @@ async function 检查加密问候状态() {
     const 加密客户端问候状态头部 = 响应20095.headers.get('X-ECH-Status');
     const 加密客户端问候配置长度 = 响应20095.headers.get('X-ECH-Config-Length');
     if (加密客户端问候状态头部 === 'ENABLED') {
-      加密客户端问候状态值.innerHTML = 'ECH状态: <span style="color: #81C995;">✅ 已启用' + (加密客户端问候配置长度 ? ' (配置长度: ' + 加密客户端问候配置长度 + ')' : '') + '</span>';
+      加密客户端问候状态值.innerHTML = 'ECH状态: <span style="color: #3ddc84;">✅ 已启用' + (加密客户端问候配置长度 ? ' (配置长度: ' + 加密客户端问候配置长度 + ')' : '') + '</span>';
     } else {
-      加密客户端问候状态值.innerHTML = 'ECH状态: <span style="color: #FDD663;">⚠️ 未启用</span>';
+      加密客户端问候状态值.innerHTML = 'ECH状态: <span style="color: #ffb454;">⚠️ 未启用</span>';
     }
   } catch (错误20094) {
-    加密客户端问候状态值.innerHTML = 'ECH状态: <span style="color: #F2B8B5;">❌ 检测失败: ' + 错误20094.message + '</span>';
+    加密客户端问候状态值.innerHTML = 'ECH状态: <span style="color: #ff5d73;">❌ 检测失败: ' + 错误20094.message + '</span>';
   }
 }
 document.addEventListener('DOMContentLoaded', function () {
@@ -6597,7 +6597,7 @@ document.addEventListener('DOMContentLoaded', function () {
           return null;
         }
         const 结果项目 = document.createElement('div');
-        结果项目.style.cssText = 'display: flex; align-items: center; padding: 8px; border-bottom: 1px solid #003300; gap: 10px;';
+        结果项目.style.cssText = 'display: flex; align-items: center; padding: 8px; border-bottom: 1px solid #08130a; gap: 10px;';
         结果项目.dataset.index = 索引20045;
         结果项目.dataset.colo = 结果20046.colo || '';
         if (!值值20044) {
@@ -6612,8 +6612,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const 本地值20042 = document.createElement('div');
         本地值20042.style.cssText = 'flex: 1; font-family: monospace; font-size: 13px;';
         const 机房名称20041 = 结果20046.colo ? 获取机房名称(结果20046.colo) : '';
-        const 机房显示 = 机房名称20041 ? ' <span style="color: #00aaff;">[' + 机房名称20041 + ']</span>' : '';
-        本地值20042.innerHTML = '<span style="color: #D0BCFF;">' + 结果20046.host + ':' + 结果20046.port + '</span>' + 机房显示 + ' <span style="color: #ffff00;">' + 结果20046.latency + 'ms</span>';
+        const 机房显示 = 机房名称20041 ? ' <span style="color: #5b8cff;">[' + 机房名称20041 + ']</span>' : '';
+        本地值20042.innerHTML = '<span style="color: #c8f135;">' + 结果20046.host + ':' + 结果20046.port + '</span>' + 机房显示 + ' <span style="color: #ffb454;">' + 结果20046.latency + 'ms</span>';
         结果项目.appendChild(复选框20043);
         结果项目.appendChild(本地值20042);
         结果列表列表.appendChild(结果项目);
@@ -7079,7 +7079,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const 城市列表 = Array.from(城市映射.values()).sort((甲值20014, 乙值20013) => 甲值20014.name.localeCompare(乙值20013.name));
     城市列表.forEach(城市 => {
       const 标签 = document.createElement('label');
-      标签.style.cssText = 'display: inline-flex; align-items: center; cursor: pointer; color: #D0BCFF; font-size: 0.85rem; padding: 4px 8px; background: rgba(20, 5, 50, 0.4); border: 1px solid #CAC4D0; border-radius: 4px;';
+      标签.style.cssText = 'display: inline-flex; align-items: center; cursor: pointer; color: #c8f135; font-size: 0.85rem; padding: 4px 8px; background: rgba(11,14,20,0.4); border: 1px solid #9aa6b8; border-radius: 4px;';
       const 复选框20012 = document.createElement('input');
       复选框20012.type = 'checkbox';
       复选框20012.value = 城市.colo;
